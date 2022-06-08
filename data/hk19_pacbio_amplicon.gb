@@ -1,0 +1,59 @@
+LOCUS       hk19_amplicon   1995 bp ds-DNA     linear       21-AUG-2021
+DEFINITION  .
+SOURCE      Frances Welsh
+COMMENT     PacBio amplicon for HK/19 libraries.
+COMMENT     Amplicon was created by restriction digest.
+COMMENT     There are no tags in the 5' and 3' termini to measure PCR strand
+            exchange.
+FEATURES             Location/Qualifiers
+     termini5        1..194
+                     /label="termini 5' of the gene"
+     ncr3            195..226
+                     /label="viral 3' NCR, 5' of gene"
+     ha              227..1936
+                     /label="WSNHAflank-HK19 gene"
+     illumina5       1907..1940
+                     /label="5' priming site for illumina"
+     barcode         1941..1956
+                     /label="16 nucleotide barcode"
+     illumina3       1957..1989
+                     /label="3' priming site for illumina"
+     termini3        1990..1995
+                     /label="termini 3' of barcode"
+                         
+ORIGIN
+        1 gccaaaacag ccaagctagc ggccgatccc caaaaaaaaa aaaaaaaaaa gagtccagag
+       61 tggccccgcc gctccgcgcc gggggggggg gggggggggg acactttcgg acatctggtc
+      121 gacctccagc atcgggggaa aaaaaaaaac aaagtgtcgc ccggagtact ggtcgacctc
+      181 cgaagttggg ggggagcaaa agcaggggaa aataaaaaca accaaaatga aggcaaaact
+      241 actggtcctg ttatatgcat ttgtagctac agatgcagac acacagaaga ttcctggaaa
+      301 tgacaatagc acggcaacgc tgtgccttgg gcaccatgca gtaccaaacg gaacgatagt
+      361 aaaaacaatc acaaatgacc gaattgaagt tactaatgct actgagttgg ttcagaattc
+      421 ctcaataggt gaaatatgcg acagtcctca tcagatcctt gatggaggga actgcacact
+      481 aatagatgct ctattggggg accctcagtg tgacggcttt caaaataaga aatgggacct
+      541 ttttgttgaa cgaagcagag cctacagcaa ctgttaccct tatgatgtgc cggattatgc
+      601 ctcccttagg tcactagttg cctcatccgg cacactggag tttaaaaatg aaagcttcaa
+      661 ttgggctgga gtcactcaaa acggaaaaag tttttcttgc ataaggggat ctagtagtag
+      721 tttctttagt agattaaatt ggttgaccca tttaaactac acatatccag cactgaacgt
+      781 gactatgcca aacaaggaac aatttgacaa attgtacatt tggggggttc accacccggg
+      841 tacggacaag gaccaaatct ccctgtatgc tcaatcatca ggaagaatca cagtatctac
+      901 caaaagaagc caacaagctg taatcccaaa tatcggatct agacccagaa taagggatat
+      961 ccctagcaga ataagcatct attggacaat agtaaaaccg ggagacatac ttttgattaa
+     1021 cagcacaggg aatctaattg ctcctagggg ttacttcaaa atacgaagtg ggaaaagctc
+     1081 aataatgaga tcagatgcac caattggcaa atgcaagtct gaatgcatca ctccaaatgg
+     1141 aagcattccc aatgacaaac cattccaaaa tgtgaacagg atcacatacg gggcctgtcc
+     1201 cagatatgtt aagcaaaaca ctctgaaatt ggcaacagga atgcgaaatg taccagagaa
+     1261 acaaactaga ggcatatttg gcgcaatagc gggtttcata gaaaatggtt gggagggaat
+     1321 ggtggatggt tggtacggtt tcaggcatca aaattctgag ggaagaggac aagcagcaga
+     1381 tctcaaaagc actcaagcag caatcgatca aatcaatggg aagctgaatc gattgatcgg
+     1441 aaaaaccaac gagaaattcc atcagattga aaaagaattc tcagaagtag aaggaagagt
+     1501 tcaagacctt gagaaatatg ttgaggacac taaaatagat ctctggtcat acaacgcgga
+     1561 gcttcttgtt gccctggaga accaacatac aattgatcta actgactcag aaatgaacaa
+     1621 actgtttgaa aaaacaaaga agcaactgag ggaaaatgct gaggatatgg gaaatggttg
+     1681 tttcaaaata taccacaaat gtgacaatgc ctgcatagga tcaataagaa atgaaactta
+     1741 tgaccacaat gtgtacaggg atgaagcatt aaacaaccgg ttccagatca agggagttga
+     1801 gctgaagtca ggatacaaag attggatcct atggatttcc tttgccatTt cTtgCttCCt
+     1861 ActGtgCgtA gcACtACtAg gCttTatTat gtgggcGtgT caGaaAggCA ACAtCcGAtg
+     1921 cAaCatCtgT atAtAaTGAG NNNNNNNNNN NNNNNNagat cggaagagcg tcgtgtaggg
+     1981 aaagagtgtg cggcc
+//
