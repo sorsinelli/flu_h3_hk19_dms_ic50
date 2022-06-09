@@ -1,57 +1,23 @@
 # Config for analysis
 
 # ----------------------------------------------------------------------------
-# Details on repo used for docs
+# Relative paths from your top-level Snakefile to where you have the pipeline
+# submodule cloned, and where you build the docs. Typically your top-level
+# Snakefile will be in the root directory and paths will be `dms-vep-pipeline`
+# and `./`, but in this example they are upstream from this subdirectory.
+# ----------------------------------------------------------------------------
+pipeline_path: dms-vep-pipeline
+docs: docs
+
+# ----------------------------------------------------------------------------
+# Details on repo, used for docs. Change this to details for your project.
 # ----------------------------------------------------------------------------
 github_repo: flu_h3_hk19_dms
-github_user: jbloomlab
-github_branch: main
-description: Deep mutational scanning of A/HongKong/45/2019
+github_user: dms-vep
+github_branch: main  # main branch for repo, assume renamed from master -> main
+description: Deep mutational scanning of barcoded A/HongKong/45/2019
 year: 2022
 authors: Frances Welsh, Timothy Yu, and Jesse Bloom
-
-# ----------------------------------------------------------------------------
-# Input data
-# ----------------------------------------------------------------------------
-pacbio_runs: data/pacbio_runs.csv  # PacBio sequencing data
-barcode_runs_wo_sample: data/barcode_runs.csv  # barcode sequencing w/o sample annotation
-
-# amplicons to which we align PacBio
-amplicons:  # files containing the amplicons
-  plasmid: data/hk19_pacbio_amplicon.gb
-amplicon_specs:  # alignparse parsing speces for amplicons
-  plasmid: data/feature_parse_specs.yaml
-amplicons_of_interest:  # names of amplicons for which we keep/analyze CCSs
-  plasmid: hk19_amplicon
-gene: ha  # name of gene in amplicons
-
-# designed mutations in the library
-designed_mutations: library_design/aggregated_mutations.csv
-designed_mutation_types:  # types of designed mutations in order handled
-  - paired_epitope_mutation
-  - epitope_mutation
-  - viable_mutation
-
-# barcodes for the neutralization standards
-neut_standard_barcodes: data/neutralization_standard_barcodes.csv
-
-# Parameters for processing Illumina barcodes
-illumina_barcode_parser_params:
-  upstream: GGCAACATCCGATGCAACATCTGTATATAATGAG
-  downstream: ''
-  minq: 20
-  upstream_mismatch: 1
-  downstream_mismatch: 0
-  bc_orientation: R2
-
-# only keep samples with an average of at least many counts per variant
-min_avg_counts: 20
-
-# Parameters for escape-probability calculation
-prob_escape_min_neut_standard_count: 1000
-prob_escape_min_neut_standard_frac: 0.0001
-prob_escape_min_no_antibody_counts: 20
-prob_escape_min_no_antibody_frac: 0.000001
 
 # ----------------------------------------------------------------------------
 # Parameters for analysis
@@ -63,36 +29,101 @@ consensus_params:  # parameters for building PacBio consensus sequences
   max_indel_diffs: null
   max_minor_sub_frac: 0.2
   max_minor_indel_frac: 0.2
-  min_support: 1 # edit for current limited sequencing data
+  min_support: 2
+
+# Parameters for processing Illumina barcodes
+illumina_barcode_parser_params:
+  upstream: GGCAACATCCGATGCAACATCTGTATATAATGAG
+  downstream: ''
+  minq: 20
+  upstream_mismatch: 1
+  downstream_mismatch: 0
+  bc_orientation: R2
+
+# Require samples to have an average of >= this many counts per variant.
+# Error raised for any sample with < this many counts unless it is specified
+# for `exclude_after_counts` in `barcode_runs`
+min_avg_counts: 15  # consider value more like ~20 for real pipelines
+
+# Parameters for antibody escape-probability calculation.
+# Require neut standard to have at least this many counts
+# and this much fraction of total counts or raise error:
+prob_escape_min_neut_standard_count: 1000
+prob_escape_min_neut_standard_frac: 0.001
+# Only compute escape probabilities for variants with at least this many
+# counts and this fraction of total counts in no-antibody sample:
+prob_escape_min_no_antibody_counts: 20
+prob_escape_min_no_antibody_frac: 0.000001  # maybe make smaller for large libraries
+
+# ----------------------------------------------------------------------------
+# Input data to dms-vep-pipeline
+# ----------------------------------------------------------------------------
+# PacBio sequencing
+pacbio_runs: data/PacBio_runs.csv  # PacBio sequencing data
+pacbio_amplicon: data/PacBio_amplicon.gb  # Genbank file with PacBio amplicon
+pacbio_amplicon_specs: data/PacBio_feature_parse_specs.yaml  # alignparse feature parsing
+variant_tags: # variant tags in PacBio amplicon, or "null" if no tags
+  null
+
+# Map sequential 1, 2, numbering of gene in PacBio amplicon to the desired
+# final reference numbering scheme. Unlike in the `dms-vep-pipeline`
+# test example, here we create this mapping from the Genbank accession.
+# numbering_reference_accession: QHD43416.1  
+# TODO: set up numbering reference. Currently just using a file in data
+site_numbering_map: data/site_map.csv # currently 
+
+# Classify mutations into different categories, such as which ones are
+# designed to be in the library.
+mutation_design_classification: library_design/aggregated_mutations.csv
+# TODO: not sure if this is still necessary?
+designed_mutation_types:  # types of designed mutations in order handled
+  - paired_epitope_mutation
+  - epitope_mutation
+  - viable_mutation
+
+# Neutralization standard barcodes
+neut_standard_barcodes: data/neutralization_standard_barcodes.csv
+
+# Illumina barcode sequencing
+barcode_runs: data/barcode_runs.csv
+
+# configuration for polyclonal fitting
+polyclonal_config: data/polyclonal_config.yaml
+fit_polyclonal_threads: 2  # threads to use per fit (ie, for bootstrapping)
 
 # ----------------------------------------------------------------------------
 # Names of output directories / files
 # ----------------------------------------------------------------------------
-# gene sequence and site numbering
+# directory with logs from running snakemake steps
+logdir: results/logs
+
+# gene sequence extracted from PacBio amplicon
 gene_sequence_codon: results/gene_sequence/codon.fasta
-gene_sequence_protein: results/gene_sequence/prot.fasta
-site_numbering_map: data/site_map.csv
+gene_sequence_protein: results/gene_sequence/protein.fasta
 
 # processing of PacBio CCSs to create codon-variant table
 process_ccs_dir: results/process_ccs
-aligned_ccs_files:
-  plasmid: results/process_ccs/CCSs_aligned_to_plasmid_amplicon.csv
-nt_variants:
-  plasmid: results/variants/plasmid_nt_variants.csv
-codon_variants:
-  plasmid: results/variants/plasmid_codon_variants.csv
-virus_variants_w_neut_standard: results/variants/virus_variants_w_neut_standard.csv
+aligned_ccs_file: results/process_ccs/CCSs_aligned_to_amplicon.csv
+nt_variants: results/variants/nt_variants.csv
+codon_variants: results/variants/codon_variants.csv
 
 # barcode sequencing
-barcode_runs: results/barcode_runs/barcode_runs.csv  # with sample names added
+processed_barcode_runs: results/barcode_runs/processed_barcode_runs.csv
 barcode_counts_dir: results/barcode_runs/counts_by_sample
 barcode_counts_invalid_dir: results/barcode_runs/counts_invalid_by_sample
 barcode_fates_dir: results/barcode_runs/fates_by_sample
-barcode_counts: results/barcode_runs/barcode_counts.csv
 
-# codon-variant table and computed scores
-codon_variant_table_pickle: results/variants/codon_variant_table.pickle
+# variant counts
+variant_counts_dir: results/variant_counts
+variant_avg_counts_plot: results/variant_counts/avg_counts_per_variant.html
+variant_avg_counts_csv: results/variant_counts/avg_counts_per_variant.csv
 
-# computed escape probabilities for antibody selections
-antibody_selections: results/prob_escape/selections.csv
-variant_prob_escapes: results/prob_escape/prob_escapes.csv
+# escape probabilities for antibody selections
+prob_escape_dir: results/prob_escape
+antibody_selections: results/prob_escape/antibody_selections.csv
+
+# polyclonal fitting directory
+polyclonal_dir: results/polyclonal_fits
+
+# html documentation
+docs_source_dir: results/docs_source
