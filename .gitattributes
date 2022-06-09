@@ -1,2 +1,0 @@
-results/barcode_runs/barcode_counts.csv filter=lfs diff=lfs merge=lfs -text
-results/prob_escape/prob_escapes.csv filter=lfs diff=lfs merge=lfs -text
