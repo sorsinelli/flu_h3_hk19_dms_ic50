@@ -10,7 +10,7 @@ hk19_amplicon:
     filter:
       mutation_nt_count: 0
       mutation_op_count: null   
-  ha:
+  gene:
     filter:
       mutation_nt_count: 45
       mutation_op_count: null

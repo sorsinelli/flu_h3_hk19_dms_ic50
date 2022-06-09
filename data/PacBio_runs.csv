@@ -1,0 +1,7 @@
+library,run,fastq
+libA,210730,/fh/fast/bloom_j/computational_notebooks/fwelsh/2021/210730_ccs/lib3_210730_ccs.fastq.gz
+libB,210730,/fh/fast/bloom_j/computational_notebooks/fwelsh/2021/210730_ccs/lib4_210730_ccs.fastq.gz
+libA,211026,/fh/fast/bloom_j/SR/ngs/pacbio/211026_SequelIIe/Frances_Pool-Cell1/fastx_files/demultiplex.bc1003_BAK8A_OA--bc1003_BAK8A_OA.hifi_reads.fastq.gz
+libB,211026,/fh/fast/bloom_j/SR/ngs/pacbio/211026_SequelIIe/Frances_Pool-Cell1/fastx_files/demultiplex.bc1008_BAK8A_OA--bc1008_BAK8A_OA.hifi_reads.fastq.gz
+libA,220218,/fh/fast/bloom_j/SR/ngs/pacbio/220218_WelshLoes/Welsh_Pool-Cell1/fastx_files/demultiplex.bc1003_BAK8A_OA--bc1003_BAK8A_OA.hifi_reads.fastq.gz
+libB,220218,/fh/fast/bloom_j/SR/ngs/pacbio/220218_WelshLoes/Welsh_Pool-Cell1/fastx_files/demultiplex.bc1008_BAK8A_OA--bc1008_BAK8A_OA.hifi_reads.fastq.gz
