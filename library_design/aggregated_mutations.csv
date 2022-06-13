@@ -1,4 +1,4 @@
-site,amino_acid,mutation_type
+sequential_site,amino_acid,mutation_type
 22,A,viable_mutation
 22,D,viable_mutation
 22,E,viable_mutation
