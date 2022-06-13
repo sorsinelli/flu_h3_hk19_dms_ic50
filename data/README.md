@@ -23,7 +23,7 @@ It has the following columns:
  - *sample_type*: can be one of the following:
    + *no-antibody_control*: entry mediated by HA
    + *antibody*: encompasses sera and antibodies
-   + *other_control*: some control unrelated to antibody selections.
+   + *no-VEP_control*: some control unrelated to virus entry and antibody selections.
  - *antibody*: name of the antibody if this sample has *sample_type* of *antibody*
  - *antibody_concentration*: concentration of antibody if this sample has *sample_type* of antibody. For sera, should be a fraction < 1 giving dilution (**not** a dilution factor).
  - *replicate*: experimental replicate.
