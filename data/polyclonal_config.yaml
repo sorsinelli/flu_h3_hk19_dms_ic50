@@ -19,3 +19,9 @@ sera_default: &sera_default
   reg_activity_weight: 1.0
   times_seen: 3
   min_epitope_activity_to_include: 0.2
+  
+# define configuration for specific sera, merging above defaults
+AUSAB-07:
+  <<: *sera_default
+AUSAB-13:
+  <<: *sera_default
