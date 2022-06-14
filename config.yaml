@@ -49,7 +49,7 @@ min_avg_counts: 15  # consider value more like ~20 for real pipelines
 # Require neut standard to have at least this many counts
 # and this much fraction of total counts or raise error:
 prob_escape_min_neut_standard_count: 1000
-prob_escape_min_neut_standard_frac: 0.001
+prob_escape_min_neut_standard_frac: 0.0001 # dropped to account for low neut std in 220419 run
 # Only compute escape probabilities for variants with at least this many
 # counts and this fraction of total counts in no-antibody sample:
 prob_escape_min_no_antibody_counts: 20
