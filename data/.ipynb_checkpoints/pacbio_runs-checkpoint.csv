@@ -1,5 +1,0 @@
-library,run,subreads
-lib1,210730,/fh/fast/bloom_j/SR/ngs/pacbio/210730_SequelIIe/Frances_Pool-Cell4/demultiplexing_files/demultiplex.bc1011_BAK8A_OA--bc1011_BAK8A_OA.bam
-lib2,210730,/fh/fast/bloom_j/SR/ngs/pacbio/210730_SequelIIe/Frances_Pool-Cell4/demultiplexing_files/demultiplex.bc1012_BAK8A_OA--bc1012_BAK8A_OA.bam
-lib3,210730,/fh/fast/bloom_j/SR/ngs/pacbio/210730_SequelIIe/Frances_Pool-Cell4/demultiplexing_files/demultiplex.bc1015_BAK8B_OA--bc1015_BAK8B_OA.bam
-lib4,210730,/fh/fast/bloom_j/SR/ngs/pacbio/210730_SequelIIe/Frances_Pool-Cell4/demultiplexing_files/demultiplex.bc1016_BAK8B_OA--bc1016_BAK8B_OA.bam
