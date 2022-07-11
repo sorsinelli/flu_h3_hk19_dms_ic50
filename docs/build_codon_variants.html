@@ -465,19 +465,11 @@ Read gene of length 1710 nucleotides as primary target
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/3e173b89f3cacc5158cd5a30112e070f/lib/python3.9/site-packages/plotnine/utils.py:371: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
-</pre></div></div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/build_codon_variants_12_1.png" src="_images/build_codon_variants_12_1.png" />
+<img alt="_images/build_codon_variants_12_0.png" src="_images/build_codon_variants_12_0.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
@@ -496,20 +488,11 @@ Read gene of length 1710 nucleotides as primary target
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/3e173b89f3cacc5158cd5a30112e070f/lib/python3.9/site-packages/plotnine/utils.py:371: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/3e173b89f3cacc5158cd5a30112e070f/lib/python3.9/site-packages/plotnine/utils.py:371: FutureWarning: The frame.append method is deprecated and will be removed from pandas in a future version. Use pandas.concat instead.
-</pre></div></div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/build_codon_variants_13_1.png" src="_images/build_codon_variants_13_1.png" />
+<img alt="_images/build_codon_variants_13_0.png" src="_images/build_codon_variants_13_0.png" />
 </div>
 </div>
 </section>
@@ -534,6 +517,11 @@ Read gene of length 1710 nucleotides as primary target
 <span class="c1"># read reference site numbering</span>
 <span class="n">site_numbering_map</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;site_numbering_map&quot;</span><span class="p">])</span>
 
+<span class="c1"># read wildtype protein</span>
+<span class="n">refprot</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">Bio</span><span class="o">.</span><span class="n">SeqIO</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;gene_sequence_protein&quot;</span><span class="p">],</span> <span class="s2">&quot;fasta&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">seq</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">refprot</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">site_numbering_map</span><span class="p">[</span><span class="s2">&quot;sequential_site&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">site_numbering_map</span><span class="p">[</span><span class="s2">&quot;sequential_site&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">1</span>
+
 <span class="c1"># add reference site numbering and remove wildtype to wildtype mutations</span>
 <span class="n">designed_mutations</span> <span class="o">=</span> <span class="p">(</span>
     <span class="n">designed_mutations</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span>
@@ -542,10 +530,10 @@ Read gene of length 1710 nucleotides as primary target
     <span class="o">.</span><span class="n">rename</span><span class="p">(</span>
         <span class="n">columns</span><span class="o">=</span><span class="p">{</span>
             <span class="s2">&quot;amino_acid&quot;</span><span class="p">:</span> <span class="s2">&quot;mutant&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;sequential_wt&quot;</span><span class="p">:</span> <span class="s2">&quot;wildtype&quot;</span><span class="p">,</span>
             <span class="s2">&quot;mutation_type&quot;</span><span class="p">:</span> <span class="s2">&quot;designed_mutation_type&quot;</span><span class="p">,</span>
         <span class="p">}</span>
     <span class="p">)</span>
+    <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">wildtype</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s2">&quot;sequential_site&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">refprot</span><span class="p">[</span><span class="n">r</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]))</span>
     <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;wildtype != mutant&quot;</span><span class="p">)</span>
     <span class="o">.</span><span class="n">assign</span><span class="p">(</span>
         <span class="n">sequential_mutation</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s2">&quot;wildtype&quot;</span><span class="p">]</span>
@@ -787,13 +775,13 @@ Read gene of length 1710 nucleotides as primary target
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
-<div id="altair-viz-73b05b1dd2d74478b40b2e4582d1888e"></div>
+<div id="altair-viz-0e634dcef01240ec8358d65df72ba6b7"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-73b05b1dd2d74478b40b2e4582d1888e") {
-      outputDiv = document.getElementById("altair-viz-73b05b1dd2d74478b40b2e4582d1888e");
+    if (outputDiv.id !== "altair-viz-0e634dcef01240ec8358d65df72ba6b7") {
+      outputDiv = document.getElementById("altair-viz-0e634dcef01240ec8358d65df72ba6b7");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -976,13 +964,13 @@ Read gene of length 1710 nucleotides as primary target
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
-<div id="altair-viz-5618dde9606c46b3838dcdc2538224d0"></div>
+<div id="altair-viz-42c9ce7f6dde4c7ab691772dcab3e430"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-5618dde9606c46b3838dcdc2538224d0") {
-      outputDiv = document.getElementById("altair-viz-5618dde9606c46b3838dcdc2538224d0");
+    if (outputDiv.id !== "altair-viz-42c9ce7f6dde4c7ab691772dcab3e430") {
+      outputDiv = document.getElementById("altair-viz-42c9ce7f6dde4c7ab691772dcab3e430");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
