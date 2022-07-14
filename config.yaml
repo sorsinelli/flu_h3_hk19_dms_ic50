@@ -55,6 +55,19 @@ prob_escape_min_neut_standard_frac: 0.0001 # dropped to account for low neut std
 prob_escape_min_no_antibody_counts: 20
 prob_escape_min_no_antibody_frac: 0.000001  # maybe make smaller for large libraries
 
+# Parameters for functional scores and global epistasis analysis
+func_scores_pseudocount: 0.5  # pseudocount when computing functional scores
+func_scores_min_wt_count: 1000  # require this many wildtype counts or error
+func_scores_min_wt_frac:  0.001  # require this fraction of all counts for wildtype or error
+# Only fit global epistasis models for variants with at least this many
+# pre-selection counts and this fraction of total pre-selection counts
+func_scores_min_preselection_counts: 20
+func_scores_min_preselection_frac: 0.000001  # make smaller for large libraries, say 0.1 / (library size)
+# when plotting mut effects on viral entry, initially require mutation seen in this many variants:
+plot_muteffects_min_times_seen: 3
+# when averaging mutation effects on viral entry, take the "median" or "mean"?
+muteffects_avg_method: median
+
 # ----------------------------------------------------------------------------
 # Input data to dms-vep-pipeline
 # ----------------------------------------------------------------------------
@@ -124,6 +137,19 @@ antibody_selections: results/prob_escape/antibody_selections.csv
 
 # polyclonal fitting directory
 polyclonal_dir: results/polyclonal_fits
+
+# functional scores for functional selections
+func_score_dir: results/func_scores
+functional_selections: results/func_scores/functional_selections.csv
+
+# global epistasis fitting directory
+globalepistasis_dir: results/globalepistasis_fits
+
+# mutation effects on function (viral entry) averaged over replicates
+muteffects_observed: results/muteffects_functional/muteffects_observed.csv
+muteffects_latent: results/muteffects_functional/muteffects_latent.csv
+muteffects_observed_heatmap: results/muteffects_functional/muteffects_observed_heatmap.html
+muteffects_latent_heatmap: results/muteffects_functional/muteffects_latent_heatmap.html
 
 # html documentation
 docs_source_dir: results/docs_source
