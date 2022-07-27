@@ -4,6 +4,9 @@ _*
 
 !.gitignore
 !.gitattributes
+!.gitmodules
+!.travis.yml
+!.flake8_nb
 !docs/.nojekyll
 
 docs/*.ipynb
@@ -12,6 +15,8 @@ docs/*.ipynb
 results/*
 
 !results/gene_sequence
+results/gene_sequence/*
+!results/gene_sequence/*.fasta
 
 !results/site_numbering
 results/site_numbering/*
@@ -23,9 +28,26 @@ results/variants/*
 
 !results/barcode_runs
 results/barcode_runs/*
-!results/barcode_runs/barcode_counts.csv
+!results/barcode_runs/processed_barcode_runs.csv
+
+!results/variant_counts
+results/variant_counts/*
+!results/variant_counts/*.csv
+
+!results/antibody_selections
+results/antibody_selections/*
+!results/antibody_selections/antibody_selection_groups.csv
 
 !results/prob_escape
 results/prob_escape/*
-!results/prob_escape/selections.csv
-!results/prob_escape/prob_escapes.csv
+!results/prob_escape/*.csv
+
+!results/func_scores
+results/func_scores/*
+!results/func_scores/*.csv
+!results/globalepistasis_fits
+results/globalepistasis_fits/*
+!results/globalepistasis_fits/*.csv
+!results/muteffects_functional
+results/muteffects_functional/*
+!results/muteffects_functional/*.csv
