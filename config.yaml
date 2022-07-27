@@ -52,8 +52,8 @@ prob_escape_min_neut_standard_count: 1000
 prob_escape_min_neut_standard_frac: 0.0001 # dropped to account for low neut std in 220419 run
 # Only compute escape probabilities for variants with at least this many
 # counts and this fraction of total counts in no-antibody sample:
-prob_escape_min_no_antibody_counts: 20
-prob_escape_min_no_antibody_frac: 0.000001  # maybe make smaller for large libraries
+prob_escape_min_no_antibody_counts: 15
+prob_escape_min_no_antibody_frac: 0.00000001  # temporarily dropped by 100-fold
 
 # Parameters for functional scores and global epistasis analysis
 func_scores_pseudocount: 0.5  # pseudocount when computing functional scores
@@ -62,7 +62,8 @@ func_scores_min_wt_frac:  0.001  # require this fraction of all counts for wildt
 # Only fit global epistasis models for variants with at least this many
 # pre-selection counts and this fraction of total pre-selection counts
 func_scores_min_preselection_counts: 15
-func_scores_min_preselection_frac: 0.000001  # make smaller for large libraries, say 0.1 / (library size)
+func_scores_min_preselection_frac: 0.00000001  # make smaller for large libraries, say 0.1 / (library size)
+# ^ temporarily dropped by 100-fold
 # when plotting mut effects on viral entry, initially require mutation seen in this many variants:
 plot_muteffects_min_times_seen: 3
 # when averaging mutation effects on viral entry, take the "median" or "mean"?
