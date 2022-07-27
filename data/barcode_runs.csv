@@ -122,7 +122,4 @@ date,virus_batch,library,sample_type,antibody,antibody_concentration,replicate,f
 220720,1,libA,antibody,5G04,11.2,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/220720_VH00319_245_AAAMVH2HV/Unaligned/Project_fwelsh/5G04_IC99_S6_R1_001.fastq.gz,,
 220720,1,libA,antibody,5G04,112,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/220720_VH00319_245_AAAMVH2HV/Unaligned/Project_fwelsh/5G04_10x-IC99_S7_R1_001.fastq.gz,,
 220720,1,libA,antibody,5G04,336,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/220720_VH00319_245_AAAMVH2HV/Unaligned/Project_fwelsh/5G04_30x-IC99_S8_R1_001.fastq.gz,,
-220720,1,libA,no-antibody_control,,,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/220720_VH00319_245_AAAMVH2HV/Unaligned/Project_fwelsh/no-Ab_1_S9_R1_001.fastq.gz,,
-220720,1,libA,no-antibody_control,,,2,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/220720_VH00319_245_AAAMVH2HV/Unaligned/Project_fwelsh/no-Ab_2_S10_R1_001.fastq.gz,,
-220720,1,libA,no-antibody_control,,,3,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/220720_VH00319_245_AAAMVH2HV/Unaligned/Project_fwelsh/no-Ab_3_S11_R1_001.fastq.gz,,
-220720,1,libA,no-antibody_control,,,4,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/220720_VH00319_245_AAAMVH2HV/Unaligned/Project_fwelsh/no-Ab_4_S12_R1_001.fastq.gz,,
+220720,1,libA,no-antibody_control,,,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/220720_VH00319_245_AAAMVH2HV/Unaligned/Project_fwelsh/no-Ab_1_S9_R1_001.fastq.gz;/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/220720_VH00319_245_AAAMVH2HV/Unaligned/Project_fwelsh/no-Ab_2_S10_R1_001.fastq.gz;/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/220720_VH00319_245_AAAMVH2HV/Unaligned/Project_fwelsh/no-Ab_3_S11_R1_001.fastq.gz;/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/220720_VH00319_245_AAAMVH2HV/Unaligned/Project_fwelsh/no-Ab_4_S12_R1_001.fastq.gz,,
