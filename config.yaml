@@ -61,7 +61,7 @@ func_scores_min_wt_count: 1000  # require this many wildtype counts or error
 func_scores_min_wt_frac:  0.001  # require this fraction of all counts for wildtype or error
 # Only fit global epistasis models for variants with at least this many
 # pre-selection counts and this fraction of total pre-selection counts
-func_scores_min_preselection_counts: 20
+func_scores_min_preselection_counts: 15
 func_scores_min_preselection_frac: 0.000001  # make smaller for large libraries, say 0.1 / (library size)
 # when plotting mut effects on viral entry, initially require mutation seen in this many variants:
 plot_muteffects_min_times_seen: 3
