@@ -1,0 +1,6 @@
+library,antibody_sample,no-antibody_sample,antibody,antibody_concentration,antibody_count,antibody_frac,no-antibody_count,no-antibody_frac
+libB,220419_1_antibody_AUSAB-07_0.00079_1,220419_1_no-antibody_control_1,AUSAB-07,0.00079,1325,0.0004457,1428,0.0004024
+libB,220419_1_antibody_AUSAB-07_0.00316_1,220419_1_no-antibody_control_1,AUSAB-07,0.00316,2735,0.0007451,1428,0.0004024
+libB,220419_1_antibody_AUSAB-07_0.0079_1,220419_1_no-antibody_control_1,AUSAB-07,0.0079,5453,0.002048,1428,0.0004024
+libB,220419_1_antibody_AUSAB-07_0.0198_1,220419_1_no-antibody_control_1,AUSAB-07,0.0198,56711,0.0213,1428,0.0004024
+libB,220419_1_antibody_AUSAB-07_0.0395_1,220419_1_no-antibody_control_1,AUSAB-07,0.0395,201608,0.04784,1428,0.0004024
