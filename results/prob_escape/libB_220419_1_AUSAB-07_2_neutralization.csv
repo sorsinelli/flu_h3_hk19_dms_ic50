@@ -1,11 +1,3 @@
-library,antibody_sample,no-antibody_sample,n_aa_substitutions,antibody_neut_standard_count,no-antibody_neut_standard_count,antibody_count,no-antibody_count,prob_escape_uncensored,prob_escape
-libB,220419_1_antibody_AUSAB-07_0.00079_2,220419_1_no-antibody_control_2,0,1502,1476,337336,311626,1.064,1
-libB,220419_1_antibody_AUSAB-07_0.00079_2,220419_1_no-antibody_control_2,1,1502,1476,778902,777690,0.9842,0.9842
-libB,220419_1_antibody_AUSAB-07_0.00079_2,220419_1_no-antibody_control_2,2,1502,1476,1019663,988718,1.013,1
-libB,220419_1_antibody_AUSAB-07_0.00079_2,220419_1_no-antibody_control_2,3,1502,1476,692354,693471,0.9811,0.9811
-libB,220419_1_antibody_AUSAB-07_0.00079_2,220419_1_no-antibody_control_2,4,1502,1476,755729,800466,0.9278,0.9278
-libB,220419_1_antibody_AUSAB-07_0.0395_2,220419_1_no-antibody_control_2,0,188123,1476,59077,311626,0.001487,0.001487
-libB,220419_1_antibody_AUSAB-07_0.0395_2,220419_1_no-antibody_control_2,1,188123,1476,354369,777690,0.003575,0.003575
-libB,220419_1_antibody_AUSAB-07_0.0395_2,220419_1_no-antibody_control_2,2,188123,1476,1405848,988718,0.01116,0.01116
-libB,220419_1_antibody_AUSAB-07_0.0395_2,220419_1_no-antibody_control_2,3,188123,1476,820366,693471,0.009282,0.009282
-libB,220419_1_antibody_AUSAB-07_0.0395_2,220419_1_no-antibody_control_2,4,188123,1476,1102278,800466,0.0108,0.0108
+version https://git-lfs.github.com/spec/v1
+oid sha256:ae902afd6c4dafaf219d9a581370de4c01a84a6042d040a2c783ba5bc855efa1
+size 1330
