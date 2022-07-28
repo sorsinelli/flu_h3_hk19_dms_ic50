@@ -1,3 +1,3 @@
-library,antibody_sample,no-antibody_sample,antibody,antibody_concentration,antibody_count,antibody_frac,no-antibody_count,no-antibody_frac
-libA,220419_1_antibody_AUSAB-07_0.00079_2,220419_1_no-antibody_control_2,AUSAB-07,0.00079,3069,0.0005664,2717,0.0005167
-libA,220419_1_antibody_AUSAB-07_0.0395_2,220419_1_no-antibody_control_2,AUSAB-07,0.0395,244694,0.06316,2717,0.0005167
+version https://git-lfs.github.com/spec/v1
+oid sha256:e62774328bbda8c0afd1cc3bab14d4af147a567f392dbd5f95a9930e461cfab6
+size 377

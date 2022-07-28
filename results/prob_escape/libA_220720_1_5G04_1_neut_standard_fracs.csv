@@ -1,5 +1,3 @@
-library,antibody_sample,no-antibody_sample,antibody,antibody_concentration,antibody_count,antibody_frac,no-antibody_count,no-antibody_frac
-libA,220720_1_antibody_5G04_2.8_1,220720_1_no-antibody_control_1,5G04,2.8,1853825,0.08897,99159,0.001086
-libA,220720_1_antibody_5G04_11.2_1,220720_1_no-antibody_control_1,5G04,11.2,5038418,0.1947,99159,0.001086
-libA,220720_1_antibody_5G04_112.0_1,220720_1_no-antibody_control_1,5G04,112,9888190,0.4207,99159,0.001086
-libA,220720_1_antibody_5G04_336.0_1,220720_1_no-antibody_control_1,5G04,336,20373471,0.6222,99159,0.001086
+version https://git-lfs.github.com/spec/v1
+oid sha256:b2cd6118825cf11260e39fc2e09cfcafac2ab2cdac698d2361b9c6adacf3c7ae
+size 563
