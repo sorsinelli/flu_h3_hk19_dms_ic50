@@ -12,7 +12,7 @@ mAb_default: &mAb_default
 
 # default configuration of polyclonal sera
 sera_default: &sera_default
-  max_epitopes: 2
+  max_epitopes: 1
   n_bootstrap_samples: 50
   reg_escape_weight: 0.1
   reg_spread_weight: 0.25
