@@ -9,4 +9,7 @@ Antibody-escape averaged across replicates
 - :doc:`AUSAB-02 <avg_antibody_escape_AUSAB-02>`
 - :doc:`AUSAB-05 <avg_antibody_escape_AUSAB-05>`
 - :doc:`AUSAB-11 <avg_antibody_escape_AUSAB-11>`
+- :doc:`1C04-5G04 <avg_antibody_escape_1C04-5G04>`
+- :doc:`5x-1C04_5G04 <avg_antibody_escape_5x-1C04_5G04>`
+- :doc:`1C04_5x-5G04 <avg_antibody_escape_1C04_5x-5G04>`
 
