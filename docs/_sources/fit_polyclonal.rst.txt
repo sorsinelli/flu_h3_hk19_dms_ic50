@@ -6,10 +6,14 @@ Fit ``polyclonal`` models
 - :doc:`libA_220419_1_AUSAB-07_2 <fit_polyclonal_libA_220419_1_AUSAB-07_2>`
 - :doc:`libB_220419_1_AUSAB-07_1 <fit_polyclonal_libB_220419_1_AUSAB-07_1>`
 - :doc:`libB_220419_1_AUSAB-07_2 <fit_polyclonal_libB_220419_1_AUSAB-07_2>`
-- :doc:`libA_220606_1_AUSAB-13_1 <fit_polyclonal_libA_220606_1_AUSAB-13_1>`
-- :doc:`libB_220606_1_AUSAB-13_1 <fit_polyclonal_libB_220606_1_AUSAB-13_1>`
 - :doc:`libA_220711_1_AUSAB-13_1 <fit_polyclonal_libA_220711_1_AUSAB-13_1>`
 - :doc:`libB_220711_1_AUSAB-13_1 <fit_polyclonal_libB_220711_1_AUSAB-13_1>`
 - :doc:`libA_220720_1_1C04_1 <fit_polyclonal_libA_220720_1_1C04_1>`
 - :doc:`libA_220720_1_5G04_1 <fit_polyclonal_libA_220720_1_5G04_1>`
+- :doc:`libA_220804_1_AUSAB-02_1 <fit_polyclonal_libA_220804_1_AUSAB-02_1>`
+- :doc:`libA_220804_1_AUSAB-05_1 <fit_polyclonal_libA_220804_1_AUSAB-05_1>`
+- :doc:`libA_220804_1_AUSAB-11_1 <fit_polyclonal_libA_220804_1_AUSAB-11_1>`
+- :doc:`libA_220804_1_AUSAB-13_1 <fit_polyclonal_libA_220804_1_AUSAB-13_1>`
+- :doc:`libB_220804_1_1C04_1 <fit_polyclonal_libB_220804_1_1C04_1>`
+- :doc:`libB_220804_1_5G04_1 <fit_polyclonal_libB_220804_1_5G04_1>`
 

@@ -29,6 +29,7 @@ details, using dropdowns, etc.
    analyze_variant_counts
    analyze_prob_escape
    fit_polyclonal
+   avg_antibody_escape
 
 Data files
 ----------
@@ -39,7 +40,7 @@ Data files
 - `processed barcode sequencing runs <https://github.com/dms-vep/flu_h3_hk19_dms/blob/main/./results/barcode_runs/processed_barcode_runs.csv>`_
 - `variant counts <https://github.com/dms-vep/flu_h3_hk19_dms/blob/main/./results/variant_counts>`_
 - `antibody selection experiments <https://github.com/dms-vep/flu_h3_hk19_dms/blob/main/./results/prob_escape/antibody_selections.csv>`_
-- `prob escapes for antibody selections <https://github.com/dms-vep/flu_h3_hk19_dms/blob/main/./results/prob_escape>`_
+- `antibody escape values <https://github.com/dms-vep/flu_h3_hk19_dms/blob/main/./results/antibody_escape>`_
 - `sequential to reference site numbering <https://github.com/dms-vep/flu_h3_hk19_dms/blob/main/./data/site_map.csv>`_
 
 
