@@ -14,10 +14,12 @@ include: os.path.join(config["pipeline_path"], "pipeline.smk")
 rule all:
     input:
         variant_count_files,
-        prob_escape_files,
-        expand(
-            rules.fit_polyclonal.output.pickle,
-            antibody_selection_group=antibody_selections["selection_group"],
+        rules.check_adequate_variant_counts.output.passed,
+        antibody_escape_files,
+        (
+            [config["muteffects_observed"], config["muteffects_latent"]]
+            if len(func_selections)
+            else []
         ),
         config["docs"],
 

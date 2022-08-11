@@ -250,6 +250,7 @@ div.nboutput.container div.output_area > div[class^='highlight']{
 }
 
 /* Some additional styling taken form the Jupyter notebook CSS */
+.jp-RenderedHTMLCommon table,
 div.rendered_html table {
   border: none;
   border-collapse: collapse;
@@ -258,10 +259,14 @@ div.rendered_html table {
   font-size: 12px;
   table-layout: fixed;
 }
+.jp-RenderedHTMLCommon thead,
 div.rendered_html thead {
   border-bottom: 1px solid black;
   vertical-align: bottom;
 }
+.jp-RenderedHTMLCommon tr,
+.jp-RenderedHTMLCommon th,
+.jp-RenderedHTMLCommon td,
 div.rendered_html tr,
 div.rendered_html th,
 div.rendered_html td {
@@ -273,12 +278,15 @@ div.rendered_html td {
   max-width: none;
   border: none;
 }
+.jp-RenderedHTMLCommon th,
 div.rendered_html th {
   font-weight: bold;
 }
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
 div.rendered_html tbody tr:nth-child(odd) {
   background: #f5f5f5;
 }
+.jp-RenderedHTMLCommon tbody tr:hover,
 div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
@@ -487,12 +495,104 @@ Read gene of length 1710 nucleotides as primary target
 <img alt="_images/build_codon_variants_13_0.png" src="_images/build_codon_variants_13_0.png" />
 </div>
 </div>
+<p>Also make a nice <code class="docutils literal notranslate"><span class="pre">altair</span></code> version of this plot:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num_muts</span> <span class="o">=</span> <span class="n">variants</span><span class="o">.</span><span class="n">numCodonMutsByType</span><span class="p">(</span>
+    <span class="n">variant_type</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">,</span>
+    <span class="n">samples</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">libraries</span><span class="o">=</span><span class="n">variants</span><span class="o">.</span><span class="n">libraries</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">mut_type_order</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">num_muts</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;number&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="s2">&quot;mutation_type&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="p">)</span>
+
+<span class="n">num_muts_chart</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">num_muts</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;mutation_type&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="n">mut_type_order</span><span class="p">)),</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;number&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;codon mutations per variant&quot;</span><span class="p">),</span>
+        <span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s2">&quot;mutation_type&quot;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
+        <span class="n">facet</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Facet</span><span class="p">(</span><span class="s2">&quot;library&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
+        <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;library&quot;</span><span class="p">,</span> <span class="s2">&quot;mutation_type&quot;</span><span class="p">,</span> <span class="n">alt</span><span class="o">.</span><span class="n">Tooltip</span><span class="p">(</span><span class="s2">&quot;number&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;.2f&quot;</span><span class="p">)],</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Step</span><span class="p">(</span><span class="mi">25</span><span class="p">),</span> <span class="n">height</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">num_muts_chart</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div id="altair-viz-5e08e137b3aa44fbb5d0802a87b24c78"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-5e08e137b3aa44fbb5d0802a87b24c78") {
+      outputDiv = document.getElementById("altair-viz-5e08e137b3aa44fbb5d0802a87b24c78");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@5.2.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "5.2.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-87ac836ac002b09709dc74dea34109ba"}, "mark": "bar", "encoding": {"color": {"field": "mutation_type", "legend": null, "type": "nominal"}, "facet": {"columns": 4, "field": "library", "title": null, "type": "nominal"}, "tooltip": [{"field": "library", "type": "nominal"}, {"field": "mutation_type", "type": "nominal"}, {"field": "number", "format": ".2f", "type": "quantitative"}], "x": {"field": "mutation_type", "scale": {"domain": ["nonsynonymous", "synonymous", "stop", "deletion"]}, "title": null, "type": "nominal"}, "y": {"field": "number", "title": "codon mutations per variant", "type": "quantitative"}}, "height": 150, "width": {"step": 25}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-87ac836ac002b09709dc74dea34109ba": [{"library": "libA", "sample": "barcoded variants", "mutation_type": "nonsynonymous", "num_muts_count": 229488, "count": 66581, "number": 3.4467490725582373}, {"library": "libA", "sample": "barcoded variants", "mutation_type": "synonymous", "num_muts_count": 12119, "count": 66581, "number": 0.18201889427914872}, {"library": "libA", "sample": "barcoded variants", "mutation_type": "stop", "num_muts_count": 3318, "count": 66581, "number": 0.049834036737207314}, {"library": "libA", "sample": "barcoded variants", "mutation_type": "deletion", "num_muts_count": 27, "count": 66581, "number": 0.00040552109460656943}, {"library": "libB", "sample": "barcoded variants", "mutation_type": "nonsynonymous", "num_muts_count": 262325, "count": 85134, "number": 3.0813188620292715}, {"library": "libB", "sample": "barcoded variants", "mutation_type": "synonymous", "num_muts_count": 15080, "count": 85134, "number": 0.17713252049709868}, {"library": "libB", "sample": "barcoded variants", "mutation_type": "stop", "num_muts_count": 4575, "count": 85134, "number": 0.053738811755585314}, {"library": "libB", "sample": "barcoded variants", "mutation_type": "deletion", "num_muts_count": 27, "count": 85134, "number": 0.0003171470857706674}]}}, {"mode": "vega-lite"});
+</script></div>
+</div>
 </section>
 <section id="Counts-of-different-types-of-mutations-in-the-libraries">
 <h2>Counts of different types of mutations in the libraries<a class="headerlink" href="#Counts-of-different-types-of-mutations-in-the-libraries" title="Permalink to this headline">¶</a></h2>
 <p>Read the designed mutations for the library, combine with site numbering file, and remove mutations that correspond to what is already wildtype in parental sequence:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># read designed mutations</span>
@@ -549,7 +649,7 @@ Read gene of length 1710 nucleotides as primary target
 </div>
 <p>Make an <a class="reference external" href="https://upsetplot.readthedocs.io/">UpSet plots</a> showing the designed mutations in each category, both among the set of all designed mutations, and among the variants we actually ended up with in each library:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># first get in wide form suitable for `upsetplot` package</span>
@@ -636,21 +736,21 @@ Read gene of length 1710 nucleotides as primary target
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/build_codon_variants_17_0.png" src="_images/build_codon_variants_17_0.png" />
+<img alt="_images/build_codon_variants_19_0.png" src="_images/build_codon_variants_19_0.png" />
 </div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/build_codon_variants_17_1.png" src="_images/build_codon_variants_17_1.png" />
+<img alt="_images/build_codon_variants_19_1.png" src="_images/build_codon_variants_19_1.png" />
 </div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="_images/build_codon_variants_17_2.png" src="_images/build_codon_variants_17_2.png" />
+<img alt="_images/build_codon_variants_19_2.png" src="_images/build_codon_variants_19_2.png" />
 </div>
 </div>
 </section>
@@ -658,7 +758,7 @@ Read gene of length 1710 nucleotides as primary target
 <h2>Mutation frequencies along the gene<a class="headerlink" href="#Mutation-frequencies-along-the-gene" title="Permalink to this headline">¶</a></h2>
 <p>Average frequency of mutations across all variants at each site:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># frequencies of mutations at each site</span>
@@ -711,7 +811,7 @@ Read gene of length 1710 nucleotides as primary target
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># make chart</span>
@@ -763,17 +863,17 @@ Read gene of length 1710 nucleotides as primary target
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
-<div id="altair-viz-0e634dcef01240ec8358d65df72ba6b7"></div>
+<div id="altair-viz-1d665464234444199c5fc6a88f48a9b1"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-0e634dcef01240ec8358d65df72ba6b7") {
-      outputDiv = document.getElementById("altair-viz-0e634dcef01240ec8358d65df72ba6b7");
+    if (outputDiv.id !== "altair-viz-1d665464234444199c5fc6a88f48a9b1") {
+      outputDiv = document.getElementById("altair-viz-1d665464234444199c5fc6a88f48a9b1");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -827,7 +927,7 @@ Read gene of length 1710 nucleotides as primary target
 <h2>How many variants have each mutation?<a class="headerlink" href="#How-many-variants-have-each-mutation?" title="Permalink to this headline">¶</a></h2>
 <p>We categorize mutations by the design categories into which they fall. Only include mutations that are either observed or designed:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get ranked counts of each mutation designed in libraries</span>
@@ -886,7 +986,7 @@ Read gene of length 1710 nucleotides as primary target
 </div>
 <p>Plot number of variants with each mutation. The legend is clickable, and you can click on entries to just show those categories (or shift-click for multiple selections). You can also use the scroll wheel on the mouse to zoom the x-axis:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># now plot ranked counts</span>
@@ -952,17 +1052,17 @@ Read gene of length 1710 nucleotides as primary target
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
-<div id="altair-viz-42c9ce7f6dde4c7ab691772dcab3e430"></div>
+<div id="altair-viz-032200f5cfd44e128482f5a1bbf9b194"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-42c9ce7f6dde4c7ab691772dcab3e430") {
-      outputDiv = document.getElementById("altair-viz-42c9ce7f6dde4c7ab691772dcab3e430");
+    if (outputDiv.id !== "altair-viz-032200f5cfd44e128482f5a1bbf9b194") {
+      outputDiv = document.getElementById("altair-viz-032200f5cfd44e128482f5a1bbf9b194");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1016,7 +1116,7 @@ Read gene of length 1710 nucleotides as primary target
 <h2>Write codon-variant tables<a class="headerlink" href="#Write-codon-variant-tables" title="Permalink to this headline">¶</a></h2>
 <p>Write the codon-variant tables to CSV files:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Writing codon variants to </span><span class="si">{</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;codon_variants&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>

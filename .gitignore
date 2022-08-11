@@ -40,14 +40,18 @@ results/antibody_selections/*
 
 !results/prob_escape
 results/prob_escape/*
-!results/prob_escape/*.csv
+!results/prob_escape/antibody_selections.csv
 
 !results/func_scores
 results/func_scores/*
-!results/func_scores/*.csv
+!results/func_scores/functional_selections.csv
 !results/globalepistasis_fits
 results/globalepistasis_fits/*
 !results/globalepistasis_fits/*.csv
 !results/muteffects_functional
 results/muteffects_functional/*
 !results/muteffects_functional/*.csv
+!results/antibody_escape
+results/antibody_escape/*
+!results/antibody_escape/*.csv
+!results/antibody_escape/*.html

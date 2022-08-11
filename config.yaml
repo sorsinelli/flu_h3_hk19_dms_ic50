@@ -43,7 +43,7 @@ illumina_barcode_parser_params:
 # Require samples to have an average of >= this many counts per variant.
 # Error raised for any sample with < this many counts unless it is specified
 # for `exclude_after_counts` in `barcode_runs`
-min_avg_counts: 15  # consider value more like ~20 for real pipelines
+min_avg_counts: 7  # consider value more like ~20 for real pipelines
 
 # Parameters for antibody escape-probability calculation.
 # Require neut standard to have at least this many counts
@@ -54,6 +54,8 @@ prob_escape_min_neut_standard_frac: 0.0001 # dropped to account for low neut std
 # counts and this fraction of total counts in no-antibody sample:
 prob_escape_min_no_antibody_counts: 15
 prob_escape_min_no_antibody_frac: 0.00000001  # temporarily dropped by 100-fold
+# when averaging antibody escape values, take the "median" or "mean"?
+escape_avg_method: median
 
 # Parameters for functional scores and global epistasis analysis
 func_scores_pseudocount: 0.5  # pseudocount when computing functional scores
@@ -138,6 +140,9 @@ antibody_selections: results/prob_escape/antibody_selections.csv
 
 # polyclonal fitting directory
 polyclonal_dir: results/polyclonal_fits
+
+# antibody-escape values
+escape_dir: results/antibody_escape
 
 # functional scores for functional selections
 func_score_dir: results/func_scores
