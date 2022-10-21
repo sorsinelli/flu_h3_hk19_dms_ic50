@@ -50,3 +50,5 @@ AUSAB-13:
   <<: *cocktail_default
 1C04_5x-5G04:
   <<: *cocktail_default
+3x-1C04_5G04:
+  <<: *cocktail_default
