@@ -1,3 +1,0 @@
-{
-    "path": "../notebooks/avg_antibody_escape_1C04_5x-5G04.ipynb"
-}
