@@ -39,6 +39,8 @@ AUSAB-07:
 AUSAB-11:
   <<: *sera_default
 AUSAB-13:
+  <<: *sera_default 
+AUSAB-13_2-fold:
   <<: *sera_default  
 1C04:
   <<: *mAb_default
