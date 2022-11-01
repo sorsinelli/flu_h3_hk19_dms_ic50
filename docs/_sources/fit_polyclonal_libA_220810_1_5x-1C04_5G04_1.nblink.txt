@@ -1,3 +1,0 @@
-{
-    "path": "../notebooks/fit_polyclonal_libA_220810_1_5x-1C04_5G04_1.ipynb"
-}

@@ -1,33 +1,47 @@
 # specify how to do `polyclonal` fitting for antibodies.
 
+# overall default (contains some shared options)
+overall_default: &overall_default
+  min_epitope_activity_to_include: 0.2
+  plot_kwargs:
+    addtl_slider_stats:
+      times_seen: 3
+      functional effect: -1.38
+    slider_binding_range_kwargs:
+      n_models:
+        step: 1
+      times_seen:
+        step: 1
+        min: 1
+        max: 25
+    heatmap_max_at_least: 2
+    heatmap_min_at_least: -2
+    
 # default configuration for monoclonal antibodies (mAbs)
 mAb_default: &mAb_default
+  <<: *overall_default
   max_epitopes: 1
-  n_bootstrap_samples: 50
-  reg_escape_weight: 0.1
-  reg_spread_weight: 0.25
-  reg_activity_weight: 1.0
-  times_seen: 3
-  min_epitope_activity_to_include: 0.2
+  fit_kwargs:
+    reg_escape_weight: 0.1
+    reg_spread_weight: 0.25
+    reg_activity_weight: 1.0
 
 # default configuration of polyclonal sera
 sera_default: &sera_default
-  max_epitopes: 1
-  n_bootstrap_samples: 50
-  reg_escape_weight: 0.1
-  reg_spread_weight: 0.25
-  reg_activity_weight: 1.0
-  times_seen: 3
-  min_epitope_activity_to_include: 0.2
+  <<: *overall_default
+  max_epitopes: 2
+  fit_kwargs:
+    reg_escape_weight: 0.1
+    reg_spread_weight: 0.25
+    reg_activity_weight: 1.0
   
 cocktail_default: &cocktail_default
+  <<: *overall_default
   max_epitopes: 2
-  n_bootstrap_samples: 50
-  reg_escape_weight: 0.1
-  reg_spread_weight: 0.25
-  reg_activity_weight: 1.0
-  times_seen: 3
-  min_epitope_activity_to_include: 0.2
+  fit_kwargs:
+    reg_escape_weight: 0.1
+    reg_spread_weight: 0.25
+    reg_activity_weight: 1.0
   
 # define configuration for specific sera or antibodies, merging above defaults
 AUSAB-02:
@@ -39,6 +53,8 @@ AUSAB-07:
 AUSAB-11:
   <<: *sera_default
 AUSAB-13:
+  <<: *sera_default 
+AUSAB-13_2-fold:
   <<: *sera_default  
 1C04:
   <<: *mAb_default
@@ -49,4 +65,6 @@ AUSAB-13:
 5x-1C04_5G04:
   <<: *cocktail_default
 1C04_5x-5G04:
+  <<: *cocktail_default
+3x-1C04_5G04:
   <<: *cocktail_default
