@@ -299,7 +299,8 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tempfile</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">itertools</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
 
 <span class="kn">import</span> <span class="nn">Bio.SeqIO</span>
 
@@ -472,7 +473,7 @@ Read gene of length 1710 nucleotides as primary target
 <img alt="_images/build_codon_variants_12_0.png" src="_images/build_codon_variants_12_0.png" />
 </div>
 </div>
-<div class="nbinput docutils container">
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
@@ -486,13 +487,6 @@ Read gene of length 1710 nucleotides as primary target
 <span class="p">)</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
 </pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="_images/build_codon_variants_13_0.png" src="_images/build_codon_variants_13_0.png" />
 </div>
 </div>
 <p>Also make a nice <code class="docutils literal notranslate"><span class="pre">altair</span></code> version of this plot:</p>
@@ -527,18 +521,26 @@ Read gene of length 1710 nucleotides as primary target
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26403dbecad16e436e5cbc1c06be88a0/lib/python3.10/site-packages/altair/utils/core.py:317: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
+</pre></div></div>
+</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
-<div id="altair-viz-8026c284a9bf4bada7f5cb887aa88735"></div>
+<div id="altair-viz-0e5feb91e9004baa9d3775443b82663d"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-8026c284a9bf4bada7f5cb887aa88735") {
-      outputDiv = document.getElementById("altair-viz-8026c284a9bf4bada7f5cb887aa88735");
+    if (outputDiv.id !== "altair-viz-0e5feb91e9004baa9d3775443b82663d") {
+      outputDiv = document.getElementById("altair-viz-0e5feb91e9004baa9d3775443b82663d");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -647,7 +649,7 @@ Read gene of length 1710 nucleotides as primary target
 </pre></div>
 </div>
 </div>
-<p>Make an <a class="reference external" href="https://upsetplot.readthedocs.io/">UpSet plots</a> showing the designed mutations in each category, both among the set of all designed mutations, and among the variants we actually ended up with in each library:</p>
+<p>Make an <a class="reference external" href="https://upsetplot.readthedocs.io/">UpSet plots</a> showing the designed mutations in each category, both among the set of all designed mutations, and among the variants we actually ended up with in each library. For the libraries, we make plots showing both the identity of the mutations (each mutation counted once no matter how many times it appears) and the composition (each mutation counted as the number of variants in which it appears):</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
@@ -667,9 +669,11 @@ Read gene of length 1710 nucleotides as primary target
 <span class="p">)</span>
 
 <span class="c1"># make upset plot for all designed mutations and each library</span>
-<span class="k">for</span> <span class="n">lib</span> <span class="ow">in</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">variants</span><span class="o">.</span><span class="n">libraries</span><span class="p">]:</span>
+<span class="k">for</span> <span class="n">lib</span><span class="p">,</span> <span class="n">weighted</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">([</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">variants</span><span class="o">.</span><span class="n">libraries</span><span class="p">],</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]):</span>
     <span class="k">if</span> <span class="n">lib</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">df</span> <span class="o">=</span> <span class="n">designed_mutations_wide</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">weighted</span><span class="p">:</span>
+            <span class="k">continue</span>  <span class="c1"># weighted plot does not make sense here</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="c1"># get mutation counts among variants in library</span>
         <span class="n">df</span> <span class="o">=</span> <span class="p">(</span>
@@ -699,6 +703,13 @@ Read gene of length 1710 nucleotides as primary target
             <span class="p">)</span>
             <span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="o">*</span><span class="n">designed_mutation_types</span><span class="p">,</span> <span class="s2">&quot;unintended mutation&quot;</span><span class="p">])</span>
         <span class="p">)</span>
+    <span class="k">if</span> <span class="n">weighted</span><span class="p">:</span>
+        <span class="n">suptitle</span> <span class="o">=</span> <span class="s2">&quot;composition of the&quot;</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;number of mutations&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">suptitle</span> <span class="o">=</span> <span class="s2">&quot;identity of the&quot;</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;number of mutations&quot;</span>
+        <span class="n">df</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">upper</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
     <span class="n">muts_fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
     <span class="n">muts_plt</span> <span class="o">=</span> <span class="n">upsetplot</span><span class="o">.</span><span class="n">UpSet</span><span class="p">(</span>
@@ -714,11 +725,11 @@ Read gene of length 1710 nucleotides as primary target
     <span class="k">if</span> <span class="s2">&quot;unintended mutation&quot;</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">names</span><span class="p">:</span>
         <span class="n">muts_plt</span><span class="o">.</span><span class="n">style_subsets</span><span class="p">(</span><span class="n">present</span><span class="o">=</span><span class="s2">&quot;unintended mutation&quot;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
     <span class="n">muts_axes</span> <span class="o">=</span> <span class="n">muts_plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fig</span><span class="o">=</span><span class="n">muts_fig</span><span class="p">)</span>
-    <span class="n">_</span> <span class="o">=</span> <span class="n">muts_axes</span><span class="p">[</span><span class="s2">&quot;intersections&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;number of mutations&quot;</span><span class="p">)</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">muts_axes</span><span class="p">[</span><span class="s2">&quot;intersections&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
     <span class="n">_</span> <span class="o">=</span> <span class="n">muts_axes</span><span class="p">[</span><span class="s2">&quot;intersections&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
     <span class="n">_</span> <span class="o">=</span> <span class="n">muts_axes</span><span class="p">[</span><span class="s2">&quot;intersections&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s2">&quot;left&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">_</span> <span class="o">=</span> <span class="n">muts_axes</span><span class="p">[</span><span class="s2">&quot;intersections&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="n">_</span> <span class="o">=</span> <span class="n">muts_axes</span><span class="p">[</span><span class="s2">&quot;totals&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;number of mutations&quot;</span><span class="p">)</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">muts_axes</span><span class="p">[</span><span class="s2">&quot;totals&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
     <span class="n">_</span> <span class="o">=</span> <span class="n">muts_axes</span><span class="p">[</span><span class="s2">&quot;totals&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
     <span class="n">_</span> <span class="o">=</span> <span class="n">muts_axes</span><span class="p">[</span><span class="s2">&quot;totals&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s2">&quot;bottom&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">_</span> <span class="o">=</span> <span class="n">muts_axes</span><span class="p">[</span><span class="s2">&quot;totals&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">visible</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -727,7 +738,7 @@ Read gene of length 1710 nucleotides as primary target
         <span class="n">desc</span> <span class="o">=</span> <span class="s2">&quot;designed mutations&quot;</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">desc</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;mutations in library </span><span class="si">{</span><span class="n">lib</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="n">_</span> <span class="o">=</span> <span class="n">muts_fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;composition of the </span><span class="si">{</span><span class="n">n_mutations</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">desc</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">_</span> <span class="o">=</span> <span class="n">muts_fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">suptitle</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">n_mutations</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">desc</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">display</span><span class="p">(</span><span class="n">muts_fig</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -746,11 +757,25 @@ Read gene of length 1710 nucleotides as primary target
 <img alt="_images/build_codon_variants_19_1.png" src="_images/build_codon_variants_19_1.png" />
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <img alt="_images/build_codon_variants_19_2.png" src="_images/build_codon_variants_19_2.png" />
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/build_codon_variants_19_3.png" src="_images/build_codon_variants_19_3.png" />
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/build_codon_variants_19_4.png" src="_images/build_codon_variants_19_4.png" />
 </div>
 </div>
 </section>
@@ -862,18 +887,26 @@ Read gene of length 1710 nucleotides as primary target
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26403dbecad16e436e5cbc1c06be88a0/lib/python3.10/site-packages/altair/utils/core.py:317: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
+</pre></div></div>
+</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
-<div id="altair-viz-c28fa545392a4aa888daa233bce38ec1"></div>
+<div id="altair-viz-67160b78a6b14751966b74a8071c516b"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-c28fa545392a4aa888daa233bce38ec1") {
-      outputDiv = document.getElementById("altair-viz-c28fa545392a4aa888daa233bce38ec1");
+    if (outputDiv.id !== "altair-viz-67160b78a6b14751966b74a8071c516b") {
+      outputDiv = document.getElementById("altair-viz-67160b78a6b14751966b74a8071c516b");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1051,18 +1084,26 @@ Read gene of length 1710 nucleotides as primary target
 </pre></div>
 </div>
 </div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26403dbecad16e436e5cbc1c06be88a0/lib/python3.10/site-packages/altair/utils/core.py:317: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
+</pre></div></div>
+</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
-<div id="altair-viz-1d2a703d2ed646e589a819198a0b421b"></div>
+<div id="altair-viz-491c79be8fd04b0ea3e24926cd8352b7"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-1d2a703d2ed646e589a819198a0b421b") {
-      outputDiv = document.getElementById("altair-viz-1d2a703d2ed646e589a819198a0b421b");
+    if (outputDiv.id !== "altair-viz-491c79be8fd04b0ea3e24926cd8352b7") {
+      outputDiv = document.getElementById("altair-viz-491c79be8fd04b0ea3e24926cd8352b7");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
