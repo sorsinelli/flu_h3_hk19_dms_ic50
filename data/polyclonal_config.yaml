@@ -53,7 +53,12 @@ AUSAB-07:
 AUSAB-11:
   <<: *sera_default
 AUSAB-13:
-  <<: *sera_default 
+  <<: *overall_default
+  max_epitopes: 1
+  fit_kwargs:
+    reg_escape_weight: 0.1
+    reg_spread_weight: 0.25
+    reg_activity_weight: 1.0
 AUSAB-13_2-fold:
   <<: *sera_default  
 1C04:
