@@ -37,7 +37,7 @@ sera_default: &sera_default
   
 cocktail_default: &cocktail_default
   <<: *overall_default
-  max_epitopes: 2
+  max_epitopes: 1
   fit_kwargs:
     reg_escape_weight: 0.1
     reg_spread_weight: 0.25
@@ -72,9 +72,4 @@ AUSAB-13_2-fold:
 1C04_5x-5G04:
   <<: *cocktail_default
 3x-1C04_5G04:
-  <<: *overall_default
-  max_epitopes: 1
-  fit_kwargs:
-    reg_escape_weight: 0.1
-    reg_spread_weight: 0.25
-    reg_activity_weight: 1.0
+  <<: *cocktail_default
