@@ -55,3 +55,5 @@ results/muteffects_functional/*
 results/antibody_escape/*
 !results/antibody_escape/*.csv
 !results/antibody_escape/*.html
+
+scratch_notebooks/221108_pre-config-change_prob-escapes/*
