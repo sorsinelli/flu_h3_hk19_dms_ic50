@@ -43,7 +43,7 @@ illumina_barcode_parser_params:
 # Require samples to have an average of >= this many counts per variant.
 # Error raised for any sample with < this many counts unless it is specified
 # for `exclude_after_counts` in `barcode_runs`
-min_avg_counts: 7  # consider value more like ~20 for real pipelines
+min_avg_counts: 15  # consider value more like ~20 for real pipelines
 
 # Parameters for antibody escape-probability calculation.
 # Require neut standard to have at least this many counts
@@ -53,7 +53,7 @@ prob_escape_min_neut_standard_frac: 0.0001 # dropped to account for low neut std
 # Only compute escape probabilities for variants with at least this many
 # counts and this fraction of total counts in no-antibody sample:
 prob_escape_min_no_antibody_counts: 15
-prob_escape_min_no_antibody_frac: 0.00000001  # temporarily dropped by 100-fold
+prob_escape_min_no_antibody_frac: 0.000002 # set to 0.1/libB size (50k variants)
 # when averaging antibody escape values, take the "median" or "mean"?
 escape_avg_method: median
 
@@ -64,8 +64,8 @@ func_scores_min_wt_frac:  0.001  # require this fraction of all counts for wildt
 # Only fit global epistasis models for variants with at least this many
 # pre-selection counts and this fraction of total pre-selection counts
 func_scores_min_preselection_counts: 15
-func_scores_min_preselection_frac: 0.00000001  # make smaller for large libraries, say 0.1 / (library size)
-# ^ temporarily dropped by 100-fold
+func_scores_min_preselection_frac: 0.000002  # make smaller for large libraries, say 0.1 / (library size)
+
 # when plotting mut effects on viral entry, initially require mutation seen in this many variants:
 plot_muteffects_min_times_seen: 3
 # when averaging mutation effects on viral entry, take the "median" or "mean"?
@@ -84,6 +84,7 @@ muteffects_plot_kwargs:
       step: 1
       min: 1
       max: 25
+        
 
 # ----------------------------------------------------------------------------
 # Input data to dms-vep-pipeline
