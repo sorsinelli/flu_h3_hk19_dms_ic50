@@ -145,10 +145,11 @@ div.nboutput.container div.prompt > div {
     }
 }
 
-/* disable scrollbars on prompts */
+/* disable scrollbars and line breaks on prompts */
 div.nbinput.container div.prompt pre,
 div.nboutput.container div.prompt pre {
     overflow: hidden;
+    white-space: pre;
 }
 
 /* input/output area */
@@ -437,12 +438,20 @@ The gene variants and neutralization standards have distinct barcodes.
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
+<div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Read gene of length 1710 nucleotides as primary target
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/c2d62d33a016ee4d79008bc40c059e8e_/lib/python3.10/site-packages/pandas/core/internals/blocks.py:2323: RuntimeWarning: invalid value encountered in cast
 </pre></div></div>
 </div>
 </section>
@@ -526,7 +535,7 @@ Read gene of length 1710 nucleotides as primary target
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26403dbecad16e436e5cbc1c06be88a0/lib/python3.10/site-packages/altair/utils/core.py:317: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/c2d62d33a016ee4d79008bc40c059e8e_/lib/python3.10/site-packages/altair/utils/core.py:317: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -534,13 +543,13 @@ Read gene of length 1710 nucleotides as primary target
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
-<div id="altair-viz-c44f3a2317e449c39449ec95da241b1a"></div>
+<div id="altair-viz-d2dd5ac3e799477a840226b3dd27df45"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-c44f3a2317e449c39449ec95da241b1a") {
-      outputDiv = document.getElementById("altair-viz-c44f3a2317e449c39449ec95da241b1a");
+    if (outputDiv.id !== "altair-viz-d2dd5ac3e799477a840226b3dd27df45") {
+      outputDiv = document.getElementById("altair-viz-d2dd5ac3e799477a840226b3dd27df45");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -892,7 +901,7 @@ Read gene of length 1710 nucleotides as primary target
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26403dbecad16e436e5cbc1c06be88a0/lib/python3.10/site-packages/altair/utils/core.py:317: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/c2d62d33a016ee4d79008bc40c059e8e_/lib/python3.10/site-packages/altair/utils/core.py:317: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -900,13 +909,13 @@ Read gene of length 1710 nucleotides as primary target
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
-<div id="altair-viz-afa3762964d9416bb51e92e4d8c1833c"></div>
+<div id="altair-viz-061468c1185c42a9b677b59bdf8697a9"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-afa3762964d9416bb51e92e4d8c1833c") {
-      outputDiv = document.getElementById("altair-viz-afa3762964d9416bb51e92e4d8c1833c");
+    if (outputDiv.id !== "altair-viz-061468c1185c42a9b677b59bdf8697a9") {
+      outputDiv = document.getElementById("altair-viz-061468c1185c42a9b677b59bdf8697a9");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1089,7 +1098,7 @@ Read gene of length 1710 nucleotides as primary target
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26403dbecad16e436e5cbc1c06be88a0/lib/python3.10/site-packages/altair/utils/core.py:317: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/c2d62d33a016ee4d79008bc40c059e8e_/lib/python3.10/site-packages/altair/utils/core.py:317: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
 </pre></div></div>
 </div>
 <div class="nboutput nblast docutils container">
@@ -1097,13 +1106,13 @@ Read gene of length 1710 nucleotides as primary target
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
-<div id="altair-viz-ad2586db8b43491caeb9356a44e9a995"></div>
+<div id="altair-viz-c5f1f869aa874972bf3c37142832248f"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-ad2586db8b43491caeb9356a44e9a995") {
-      outputDiv = document.getElementById("altair-viz-ad2586db8b43491caeb9356a44e9a995");
+    if (outputDiv.id !== "altair-viz-c5f1f869aa874972bf3c37142832248f") {
+      outputDiv = document.getElementById("altair-viz-c5f1f869aa874972bf3c37142832248f");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
