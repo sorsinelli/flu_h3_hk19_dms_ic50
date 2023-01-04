@@ -17,7 +17,7 @@ github_user: dms-vep
 github_branch: main  # main branch for repo, assume renamed from master -> main
 description: Deep mutational scanning of barcoded A/HongKong/45/2019
 year: 2022
-authors: Frances Welsh, Timothy Yu, and Jesse Bloom
+authors: Frances Welsh and Jesse Bloom
 
 # ----------------------------------------------------------------------------
 # Parameters for analysis
@@ -84,7 +84,8 @@ muteffects_plot_kwargs:
       step: 1
       min: 1
       max: 25
-        
+
+PDB: data/PDBs/4o5n.pdb        
 
 # ----------------------------------------------------------------------------
 # Input data to dms-vep-pipeline
