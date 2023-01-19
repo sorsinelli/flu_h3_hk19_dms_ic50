@@ -525,7 +525,7 @@ No spatial distances
             <span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
             <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
             <span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">upper</span><span class="o">=</span><span class="n">max_aa_subs</span><span class="p">)</span>
-            <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">max_aa_subs</span> <span class="k">else</span> <span class="sa">f</span><span class="s2">&quot;&gt;</span><span class="si">{</span><span class="n">max_aa_subs</span> <span class="o">-</span> <span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">max_aa_subs</span> <span class="k">else</span> <span class="sa">f</span><span class="s2">&quot;&gt;</span><span class="si">{</span><span class="n">max_aa_subs</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="p">)</span>
     <span class="p">)</span>
     <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;antibody_concentration&quot;</span><span class="p">,</span> <span class="s2">&quot;n_subs&quot;</span><span class="p">],</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -572,7 +572,7 @@ No spatial distances
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/c2d62d33a016ee4d79008bc40c059e8e_/lib/python3.10/site-packages/altair/utils/core.py:317: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/9eefa462be169763c2867656464cf494_/lib/python3.10/site-packages/altair/utils/core.py:317: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
   for col_name, dtype in df.dtypes.iteritems():
 </pre></div></div>
 </div>
@@ -581,13 +581,13 @@ No spatial distances
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
-<div id="altair-viz-11e7802bcc11415188c0faa46b1b5e68"></div>
+<div id="altair-viz-45a0c2bd82d54503a9a8e109cd83310c"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-11e7802bcc11415188c0faa46b1b5e68") {
-      outputDiv = document.getElementById("altair-viz-11e7802bcc11415188c0faa46b1b5e68");
+    if (outputDiv.id !== "altair-viz-45a0c2bd82d54503a9a8e109cd83310c") {
+      outputDiv = document.getElementById("altair-viz-45a0c2bd82d54503a9a8e109cd83310c");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -710,8 +710,7 @@ min_epitope_activity_to_include=0.2
         <span class="n">model</span><span class="o">.</span><span class="n">activity_wt_df</span><span class="p">[</span><span class="s2">&quot;activity&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">min_epitope_activity_to_include</span>
     <span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Stop fitting, epitope has activity &lt;=</span><span class="si">{</span><span class="n">min_epitope_activity_to_include</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="n">models</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
-        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># get previous model</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># get previous model</span>
         <span class="k">break</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">models</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
@@ -728,16 +727,16 @@ min_epitope_activity_to_include=0.2
 
 Fitting model with n_epitopes=1
 # First fitting site-level model.
-# Starting optimization of 520 parameters at Sat Dec 24 23:07:57 2022.
+# Starting optimization of 520 parameters at Thu Jan 19 11:40:50 2023.
         step    time_sec        loss    fit_loss  reg_escape  reg_spread reg_spatial reg_uniqueness reg_uniqueness2 reg_activity
-           0    0.037515      7255.7      7253.4           0           0           0              0               0       2.2298
-          56      2.1762       748.3      737.46       6.968           0           0              0               0       3.8705
-# Successfully finished at Sat Dec 24 23:07:59 2022.
-# Starting optimization of 3313 parameters at Sat Dec 24 23:07:59 2022.
+           0    0.041097      7255.7      7253.4           0           0           0              0               0       2.2298
+          56      2.1749       748.3      737.46       6.968           0           0              0               0       3.8705
+# Successfully finished at Thu Jan 19 11:40:53 2023.
+# Starting optimization of 3313 parameters at Thu Jan 19 11:40:53 2023.
         step    time_sec        loss    fit_loss  reg_escape  reg_spread reg_spatial reg_uniqueness reg_uniqueness2 reg_activity
-           0    0.044428      1101.4      1035.8      61.767  1.4181e-31           0              0               0       3.8705
-          74      3.5617      1028.9      1006.5      16.763      1.1762           0              0               0       4.4296
-# Successfully finished at Sat Dec 24 23:08:03 2022.
+           0    0.041257      1101.4      1035.8      61.767  1.4181e-31           0              0               0       3.8705
+          74      3.3596      1028.9      1006.5      16.763      1.1762           0              0               0       4.4296
+# Successfully finished at Thu Jan 19 11:40:56 2023.
 Activities of epitopes:
 </pre></div></div>
 </div>
@@ -849,7 +848,7 @@ The selected model has 1 epitopes
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/c2d62d33a016ee4d79008bc40c059e8e_/lib/python3.10/site-packages/altair/utils/core.py:317: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/9eefa462be169763c2867656464cf494_/lib/python3.10/site-packages/altair/utils/core.py:317: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
   for col_name, dtype in df.dtypes.iteritems():
 </pre></div></div>
 </div>
@@ -858,13 +857,13 @@ The selected model has 1 epitopes
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
-<div id="altair-viz-a074b79420414d1db4acf1a14108264f"></div>
+<div id="altair-viz-a60f232785b442b8b3fb88dfad275abb"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-a074b79420414d1db4acf1a14108264f") {
-      outputDiv = document.getElementById("altair-viz-a074b79420414d1db4acf1a14108264f");
+    if (outputDiv.id !== "altair-viz-a60f232785b442b8b3fb88dfad275abb") {
+      outputDiv = document.getElementById("altair-viz-a60f232785b442b8b3fb88dfad275abb");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -946,7 +945,7 @@ The selected model has 1 epitopes
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/c2d62d33a016ee4d79008bc40c059e8e_/lib/python3.10/site-packages/altair/utils/core.py:317: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/9eefa462be169763c2867656464cf494_/lib/python3.10/site-packages/altair/utils/core.py:317: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
   for col_name, dtype in df.dtypes.iteritems():
 </pre></div></div>
 </div>
@@ -955,13 +954,13 @@ The selected model has 1 epitopes
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
-<div id="altair-viz-0538e5f951b847258312083504a2a90e"></div>
+<div id="altair-viz-585389a444324809930d14ee68048901"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-0538e5f951b847258312083504a2a90e") {
-      outputDiv = document.getElementById("altair-viz-0538e5f951b847258312083504a2a90e");
+    if (outputDiv.id !== "altair-viz-585389a444324809930d14ee68048901") {
+      outputDiv = document.getElementById("altair-viz-585389a444324809930d14ee68048901");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1015,9 +1014,9 @@ The selected model has 1 epitopes
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Saving model to </span><span class="si">{</span><span class="n">pickle_file</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Saving </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">models</span><span class="p">)</span><span class="si">}</span><span class="s2"> models to </span><span class="si">{</span><span class="n">pickle_file</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">pickle_file</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">models</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1026,7 +1025,7 @@ The selected model has 1 epitopes
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Saving model to pickle_file=&#39;results/polyclonal_fits/libB_221108_1_1C04-5G04_1.pickle&#39;
+Saving 1 models to pickle_file=&#39;results/polyclonal_fits/libB_221108_1_1C04-5G04_1.pickle&#39;
 </pre></div></div>
 </div>
 </section>
@@ -1043,7 +1042,7 @@ Saving model to pickle_file=&#39;results/polyclonal_fits/libB_221108_1_1C04-5G04
       
       |
       Powered by <a href="http://sphinx-doc.org/">Sphinx 4.3.2</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
       |
       <a href="_sources/fit_polyclonal_libB_221108_1_1C04-5G04_1.nblink.txt"
