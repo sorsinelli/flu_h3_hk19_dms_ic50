@@ -120,5 +120,3 @@ date,virus_batch,library,sample_type,antibody,antibody_concentration,replicate,f
 230126,1,libB,antibody,AUSAB-11,0.004444444,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230126_VH00699_256_AACJTHKM5/Unaligned/Project_fwelsh/AUSAB-11_c5_S19_R1_001.fastq.gz,,
 230126,1,libB,antibody,AUSAB-11,0.002962963,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230126_VH00699_256_AACJTHKM5/Unaligned/Project_fwelsh/AUSAB-11_c6_S20_R1_001.fastq.gz,,
 230126,1,libB,no-antibody_control,,,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230126_VH00699_256_AACJTHKM5/Unaligned/Project_fwelsh/no-Ab_1_S21_R1_001.fastq.gz;/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230126_VH00699_256_AACJTHKM5/Unaligned/Project_fwelsh/no-Ab_2_S22_R1_001.fastq.gz;/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230126_VH00699_256_AACJTHKM5/Unaligned/Project_fwelsh/no-Ab_3_S23_R1_001.fastq.gz,,
-,,,,,,,,,
-,,,,,,,,,
