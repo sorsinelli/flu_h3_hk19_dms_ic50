@@ -13,4 +13,8 @@ Fit ``polyclonal`` models
 - :doc:`libA_221223_1_AUSAB-05_1 <fit_polyclonal_libA_221223_1_AUSAB-05_1>`
 - :doc:`libA_221223_1_AUSAB-07_1 <fit_polyclonal_libA_221223_1_AUSAB-07_1>`
 - :doc:`libA_221223_1_AUSAB-11_1 <fit_polyclonal_libA_221223_1_AUSAB-11_1>`
+- :doc:`libB_230118_1_1C04-5G04_1 <fit_polyclonal_libB_230118_1_1C04-5G04_1>`
+- :doc:`libB_230118_1_1C04_1 <fit_polyclonal_libB_230118_1_1C04_1>`
+- :doc:`libB_230118_1_5G04_1 <fit_polyclonal_libB_230118_1_5G04_1>`
+- :doc:`libB_230118_1_AUSAB-13_1 <fit_polyclonal_libB_230118_1_AUSAB-13_1>`
 

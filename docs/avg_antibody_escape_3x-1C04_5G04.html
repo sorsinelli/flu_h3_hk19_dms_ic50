@@ -304,6 +304,7 @@ div.rendered_html tbody tr:hover {
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="kn">import</span> <span class="nn">polyclonal</span>
+<span class="kn">from</span> <span class="nn">polyclonal.polyclonal</span> <span class="kn">import</span> <span class="n">PolyclonalHarmonizeError</span>
 
 <span class="kn">import</span> <span class="nn">yaml</span>
 </pre></div>
@@ -361,7 +362,7 @@ div.rendered_html tbody tr:hover {
 <br/></pre></div>
 </div>
 </div>
-<p>Convert <code class="docutils literal notranslate"><span class="pre">selection_groups</span></code> into a data frame and get all of the pickled models:</p>
+<p>Convert <code class="docutils literal notranslate"><span class="pre">selection_groups</span></code> into a data frame and get all of the pickled models for each number of epitopes:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -371,10 +372,15 @@ div.rendered_html tbody tr:hover {
 <span class="n">display</span><span class="p">(</span><span class="n">models_df</span><span class="p">)</span>
 
 <span class="c1"># convert pickle files into models</span>
-<span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">,</span> <span class="n">models_df</span><span class="p">[</span><span class="s2">&quot;pickle_file&quot;</span><span class="p">]))</span>
-<span class="n">models_df</span> <span class="o">=</span> <span class="n">models_df</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
-    <span class="n">model</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s2">&quot;pickle_file&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)))</span>
-<span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s2">&quot;pickle_file&quot;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">,</span> <span class="n">models_df</span><span class="p">[</span><span class="s2">&quot;pickle_file&quot;</span><span class="p">])),</span> <span class="n">models_df</span><span class="p">[</span><span class="s2">&quot;pickle_file&quot;</span><span class="p">]</span>
+<span class="n">models_df</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">models_df</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+        <span class="n">model</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s2">&quot;pickle_file&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)))</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">explode</span><span class="p">(</span><span class="s2">&quot;model&quot;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;pickle_file&quot;</span><span class="p">])</span>
+    <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">n_epitopes</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s2">&quot;model&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">epitopes</span><span class="p">)))</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -436,17 +442,34 @@ Averaging the following models for antibody=&#39;3x-1C04_5G04&#39;
 </table>
 </div></div>
 </div>
-<p>Now build the average model:</p>
-<div class="nbinput nblast docutils container">
+<p>Now build the average model, starting with the max number of epitopes and continuing with fewer if we can’t get harmonization with the max number:</p>
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">avg_model</span> <span class="o">=</span> <span class="n">polyclonal</span><span class="o">.</span><span class="n">PolyclonalAverage</span><span class="p">(</span>
-    <span class="n">models_df</span><span class="p">,</span>
-    <span class="n">default_avg_to_plot</span><span class="o">=</span><span class="n">escape_avg_method</span><span class="p">,</span>
-<span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_epitopes</span> <span class="o">=</span> <span class="n">models_df</span><span class="p">[</span><span class="s2">&quot;n_epitopes&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">n_epitopes</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Trying to harmonize models with </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> epitopes...&quot;</span><span class="p">)</span>
+        <span class="n">avg_model</span> <span class="o">=</span> <span class="n">polyclonal</span><span class="o">.</span><span class="n">PolyclonalAverage</span><span class="p">(</span>
+            <span class="n">models_df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;n_epitopes == @n&quot;</span><span class="p">),</span>
+            <span class="n">default_avg_to_plot</span><span class="o">=</span><span class="n">escape_avg_method</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Successfully harmonized models.&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">PolyclonalHarmonizeError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Harmonization failed with this error:</span><span class="se">\n</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">exc</span><span class="p">)</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Trying to harmonize models with 1 epitopes...
+Successfully harmonized models.
+</pre></div></div>
 </div>
 <p>Look at correlation in escape values across replicates:</p>
 <div class="nbinput docutils container">
@@ -462,7 +485,7 @@ Averaging the following models for antibody=&#39;3x-1C04_5G04&#39;
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/c2d62d33a016ee4d79008bc40c059e8e_/lib/python3.10/site-packages/altair/utils/core.py:317: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/9eefa462be169763c2867656464cf494_/lib/python3.10/site-packages/altair/utils/core.py:317: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
   for col_name, dtype in df.dtypes.iteritems():
 </pre></div></div>
 </div>
@@ -471,13 +494,13 @@ Averaging the following models for antibody=&#39;3x-1C04_5G04&#39;
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
-<div id="altair-viz-ae61040acef540c6b819c460b0987211"></div>
+<div id="altair-viz-376943c999cc4799bf1ec9af00d6f3cb"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-ae61040acef540c6b819c460b0987211") {
-      outputDiv = document.getElementById("altair-viz-ae61040acef540c6b819c460b0987211");
+    if (outputDiv.id !== "altair-viz-376943c999cc4799bf1ec9af00d6f3cb") {
+      outputDiv = document.getElementById("altair-viz-376943c999cc4799bf1ec9af00d6f3cb");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -523,7 +546,7 @@ Averaging the following models for antibody=&#39;3x-1C04_5G04&#39;
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelLimit": 500}}, "data": {"name": "data-33e24714ab1a558b397eaf0d3c266ca7"}, "mark": {"type": "rect", "stroke": "black"}, "encoding": {"color": {"field": "r2", "scale": {"domain": [0, 1], "scheme": "yellowgreenblue"}, "type": "quantitative"}, "facet": {}, "tooltip": [{"field": "r", "format": ".3f", "type": "quantitative"}, {"field": "r2", "format": ".3f", "type": "quantitative"}, {"field": "epitope", "type": "nominal"}, {"field": "date_1", "type": "quantitative"}, {"field": "library_1", "type": "nominal"}, {"field": "replicate_1", "type": "quantitative"}, {"field": "virus_batch_1", "type": "quantitative"}, {"field": "date_2", "type": "quantitative"}, {"field": "library_2", "type": "nominal"}, {"field": "replicate_2", "type": "quantitative"}, {"field": "virus_batch_2", "type": "quantitative"}], "x": {"field": "_label_1", "title": null, "type": "nominal"}, "y": {"field": "_label_2", "title": null, "type": "nominal"}}, "height": {"step": 15}, "width": {"step": 15}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-33e24714ab1a558b397eaf0d3c266ca7": [{"r": 1.0, "r2": 1.0, "epitope": "1", "date_1": 221027, "library_1": "libA", "replicate_1": 1, "virus_batch_1": 1, "date_2": 221027, "library_2": "libA", "replicate_2": 1, "virus_batch_2": 1, "_label_1": "221027-libA-1-1", "_label_2": "221027-libA-1-1"}, {"r": 0.2593469640029774, "r2": 0.06726084773756166, "epitope": "1", "date_1": 221108, "library_1": "libB", "replicate_1": 1, "virus_batch_1": 1, "date_2": 221027, "library_2": "libA", "replicate_2": 1, "virus_batch_2": 1, "_label_1": "221108-libB-1-1", "_label_2": "221027-libA-1-1"}, {"r": 0.2593469640029774, "r2": 0.06726084773756166, "epitope": "1", "date_1": 221027, "library_1": "libA", "replicate_1": 1, "virus_batch_1": 1, "date_2": 221108, "library_2": "libB", "replicate_2": 1, "virus_batch_2": 1, "_label_1": "221027-libA-1-1", "_label_2": "221108-libB-1-1"}, {"r": 1.0, "r2": 1.0, "epitope": "1", "date_1": 221108, "library_1": "libB", "replicate_1": 1, "virus_batch_1": 1, "date_2": 221108, "library_2": "libB", "replicate_2": 1, "virus_batch_2": 1, "_label_1": "221108-libB-1-1", "_label_2": "221108-libB-1-1"}]}}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelLimit": 500}}, "data": {"name": "data-00bd9e16bead9e2938b121889dc1849f"}, "mark": {"type": "rect", "stroke": "black"}, "encoding": {"color": {"field": "r2", "scale": {"domain": [0, 1], "scheme": "yellowgreenblue"}, "type": "quantitative"}, "facet": {}, "tooltip": [{"field": "r", "format": ".3f", "type": "quantitative"}, {"field": "r2", "format": ".3f", "type": "quantitative"}, {"field": "epitope", "type": "nominal"}, {"field": "date_1", "type": "quantitative"}, {"field": "library_1", "type": "nominal"}, {"field": "replicate_1", "type": "quantitative"}, {"field": "virus_batch_1", "type": "quantitative"}, {"field": "n_epitopes_1", "type": "quantitative"}, {"field": "date_2", "type": "quantitative"}, {"field": "library_2", "type": "nominal"}, {"field": "replicate_2", "type": "quantitative"}, {"field": "virus_batch_2", "type": "quantitative"}, {"field": "n_epitopes_2", "type": "quantitative"}], "x": {"field": "_label_1", "title": null, "type": "nominal"}, "y": {"field": "_label_2", "title": null, "type": "nominal"}}, "height": {"step": 15}, "width": {"step": 15}, "$schema": "https://vega.github.io/schema/vega-lite/v5.2.0.json", "datasets": {"data-00bd9e16bead9e2938b121889dc1849f": [{"r": 1.0, "r2": 1.0, "epitope": "1", "date_1": 221027, "library_1": "libA", "replicate_1": 1, "virus_batch_1": 1, "n_epitopes_1": 1, "date_2": 221027, "library_2": "libA", "replicate_2": 1, "virus_batch_2": 1, "n_epitopes_2": 1, "_label_1": "221027-libA-1-1-1", "_label_2": "221027-libA-1-1-1"}, {"r": 0.2593469640029774, "r2": 0.06726084773756166, "epitope": "1", "date_1": 221108, "library_1": "libB", "replicate_1": 1, "virus_batch_1": 1, "n_epitopes_1": 1, "date_2": 221027, "library_2": "libA", "replicate_2": 1, "virus_batch_2": 1, "n_epitopes_2": 1, "_label_1": "221108-libB-1-1-1", "_label_2": "221027-libA-1-1-1"}, {"r": 0.2593469640029774, "r2": 0.06726084773756166, "epitope": "1", "date_1": 221027, "library_1": "libA", "replicate_1": 1, "virus_batch_1": 1, "n_epitopes_1": 1, "date_2": 221108, "library_2": "libB", "replicate_2": 1, "virus_batch_2": 1, "n_epitopes_2": 1, "_label_1": "221027-libA-1-1-1", "_label_2": "221108-libB-1-1-1"}, {"r": 1.0, "r2": 1.0, "epitope": "1", "date_1": 221108, "library_1": "libB", "replicate_1": 1, "virus_batch_1": 1, "n_epitopes_1": 1, "date_2": 221108, "library_2": "libB", "replicate_2": 1, "virus_batch_2": 1, "n_epitopes_2": 1, "_label_1": "221108-libB-1-1-1", "_label_2": "221108-libB-1-1-1"}]}}, {"mode": "vega-lite"});
 </script></div>
 </div>
 <p>Plot the activities:</p>
@@ -540,7 +563,7 @@ Averaging the following models for antibody=&#39;3x-1C04_5G04&#39;
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/c2d62d33a016ee4d79008bc40c059e8e_/lib/python3.10/site-packages/altair/utils/core.py:317: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/9eefa462be169763c2867656464cf494_/lib/python3.10/site-packages/altair/utils/core.py:317: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
   for col_name, dtype in df.dtypes.iteritems():
 </pre></div></div>
 </div>
@@ -549,13 +572,13 @@ Averaging the following models for antibody=&#39;3x-1C04_5G04&#39;
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
-<div id="altair-viz-94baa7e8b0104d489bb56b51b261c3cd"></div>
+<div id="altair-viz-ee2bc89481c0472e95fe34edef0a997f"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-94baa7e8b0104d489bb56b51b261c3cd") {
-      outputDiv = document.getElementById("altair-viz-94baa7e8b0104d489bb56b51b261c3cd");
+    if (outputDiv.id !== "altair-viz-ee2bc89481c0472e95fe34edef0a997f") {
+      outputDiv = document.getElementById("altair-viz-ee2bc89481c0472e95fe34edef0a997f");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -660,7 +683,7 @@ Averaging the following models for antibody=&#39;3x-1C04_5G04&#39;
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/c2d62d33a016ee4d79008bc40c059e8e_/lib/python3.10/site-packages/altair/utils/core.py:317: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/9eefa462be169763c2867656464cf494_/lib/python3.10/site-packages/altair/utils/core.py:317: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
   for col_name, dtype in df.dtypes.iteritems():
 </pre></div></div>
 </div>
@@ -677,13 +700,13 @@ Saving plot to escape_plot=&#39;results/antibody_escape/3x-1C04_5G04_escape_plot
 </pre></div>
 </div>
 <div class="output_area rendered_html docutils container">
-<div id="altair-viz-9e3e3147cf6f4287a09fadc97f06a976"></div>
+<div id="altair-viz-d35b666dca7949b9973a03ec91a44676"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-9e3e3147cf6f4287a09fadc97f06a976") {
-      outputDiv = document.getElementById("altair-viz-9e3e3147cf6f4287a09fadc97f06a976");
+    if (outputDiv.id !== "altair-viz-d35b666dca7949b9973a03ec91a44676") {
+      outputDiv = document.getElementById("altair-viz-d35b666dca7949b9973a03ec91a44676");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -765,22 +788,13 @@ Saving model to avg_pickle=&#39;results/antibody_escape/3x-1C04_5G04.pickle&#39;
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
+<div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 Saving average escape values to avg_escape=&#39;results/antibody_escape/3x-1C04_5G04_avg.csv&#39;
 Saving per-replicate escape values to rep_escape=&#39;results/antibody_escape/3x-1C04_5G04_rep.csv&#39;
-</pre></div></div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area stderr docutils container">
-<div class="highlight"><pre>
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/c2d62d33a016ee4d79008bc40c059e8e_/lib/python3.10/site-packages/pandas/core/internals/blocks.py:2323: RuntimeWarning: invalid value encountered in cast
-  values = values.astype(str)
 </pre></div></div>
 </div>
 </section>
@@ -796,7 +810,7 @@ Saving per-replicate escape values to rep_escape=&#39;results/antibody_escape/3x
       
       |
       Powered by <a href="http://sphinx-doc.org/">Sphinx 4.3.2</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
       |
       <a href="_sources/avg_antibody_escape_3x-1C04_5G04.nblink.txt"
