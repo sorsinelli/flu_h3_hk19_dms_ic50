@@ -73,3 +73,14 @@ AUSAB-13_2-fold:
   <<: *cocktail_default
 3x-1C04_5G04:
   <<: *cocktail_default
+  
+2323:
+  <<: *sera_default
+2367:
+  <<: *sera_default
+2389:
+  <<: *sera_default
+2462:
+  <<: *sera_default
+3944:
+  <<: *sera_default
