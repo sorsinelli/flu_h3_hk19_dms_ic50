@@ -34,6 +34,14 @@ sera_default: &sera_default
     reg_escape_weight: 0.1
     reg_spread_weight: 0.25
     reg_activity_weight: 1.0
+    
+ped_sera_default: &ped_sera_default
+  <<: *overall_default
+  max_epitopes: 1
+  fit_kwargs:
+    reg_escape_weight: 0.1
+    reg_spread_weight: 0.25
+    reg_activity_weight: 1.0
   
 cocktail_default: &cocktail_default
   <<: *overall_default
@@ -73,3 +81,14 @@ AUSAB-13_2-fold:
   <<: *cocktail_default
 3x-1C04_5G04:
   <<: *cocktail_default
+  
+2323:
+  <<: *ped_sera_default
+2367:
+  <<: *ped_sera_default
+2389:
+  <<: *ped_sera_default
+2462:
+  <<: *ped_sera_default
+3944:
+  <<: *ped_sera_default
