@@ -44,17 +44,5 @@ Data files
 
 Interactive plots of mutation antibody escape
 ---------------------------------------------
-- `1C04-5G04 escape plot <1C04-5G04_escape_plot.html>`_
-- `1C04 escape plot <1C04_escape_plot.html>`_
-- `2323 escape plot <2323_escape_plot.html>`_
 - `2367 escape plot <2367_escape_plot.html>`_
-- `2389 escape plot <2389_escape_plot.html>`_
-- `2462 escape plot <2462_escape_plot.html>`_
-- `3944 escape plot <3944_escape_plot.html>`_
-- `3x-1C04 5G04 escape plot <3x-1C04_5G04_escape_plot.html>`_
-- `5G04 escape plot <5G04_escape_plot.html>`_
-- `AUSAB-05 escape plot <AUSAB-05_escape_plot.html>`_
-- `AUSAB-07 escape plot <AUSAB-07_escape_plot.html>`_
-- `AUSAB-11 escape plot <AUSAB-11_escape_plot.html>`_
-- `AUSAB-13 escape plot <AUSAB-13_escape_plot.html>`_
 
