@@ -44,5 +44,10 @@ Data files
 
 Interactive plots of mutation antibody escape
 ---------------------------------------------
+- `2343 escape plot <2343_escape_plot.html>`_
+- `2350 escape plot <2350_escape_plot.html>`_
+- `2365 escape plot <2365_escape_plot.html>`_
 - `2367 escape plot <2367_escape_plot.html>`_
+- `2382 escape plot <2382_escape_plot.html>`_
+- `3866 escape plot <3866_escape_plot.html>`_
 
