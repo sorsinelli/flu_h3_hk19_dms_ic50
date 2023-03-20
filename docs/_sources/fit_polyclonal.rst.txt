@@ -11,4 +11,9 @@ Fit ``polyclonal`` models
 - :doc:`libA_230317_1_2365_1 <fit_polyclonal_libA_230317_1_2365_1>`
 - :doc:`libA_230317_1_2382_1 <fit_polyclonal_libA_230317_1_2382_1>`
 - :doc:`libA_230317_1_3866_1 <fit_polyclonal_libA_230317_1_3866_1>`
+- :doc:`libA_230317_1_2343_2 <fit_polyclonal_libA_230317_1_2343_2>`
+- :doc:`libA_230317_1_2350_2 <fit_polyclonal_libA_230317_1_2350_2>`
+- :doc:`libA_230317_1_2365_2 <fit_polyclonal_libA_230317_1_2365_2>`
+- :doc:`libA_230317_1_2382_2 <fit_polyclonal_libA_230317_1_2382_2>`
+- :doc:`libA_230317_1_3866_2 <fit_polyclonal_libA_230317_1_3866_2>`
 
