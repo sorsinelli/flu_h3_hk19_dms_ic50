@@ -102,3 +102,13 @@ AUSAB-13_2-fold:
   <<: *ped_sera_default
 3866:
   <<: *ped_sera_default
+2388:
+  <<: *ped_sera_default
+2463:
+  <<: *ped_sera_default
+4299:
+  <<: *ped_sera_default
+3973:
+  <<: *ped_sera_default
+4584:
+  <<: *ped_sera_default
