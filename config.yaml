@@ -54,6 +54,8 @@ prob_escape_min_neut_standard_frac: 0.0001 # dropped to account for low neut std
 # counts and this fraction of total counts in no-antibody sample:
 prob_escape_min_no_antibody_counts: 15
 prob_escape_min_no_antibody_frac: 0.000002 # set to 0.1/libB size (50k variants)
+prob_escape_min_antibody_counts: 30 # 2x the min_no_antibody_counts threshold
+prob_escape_min_antibody_frac: 0.00004 # set to 2/libB size (50k variants)
 # when averaging antibody escape values, take the "median" or "mean"?
 escape_avg_method: median
 
