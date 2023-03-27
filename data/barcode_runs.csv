@@ -112,7 +112,7 @@ date,virus_batch,library,sample_type,antibody,antibody_concentration,replicate,f
 230126,1,libB,antibody,AUSAB-07,0.002299259,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230126_VH00699_256_AACJTHKM5/Unaligned/Project_fwelsh/AUSAB-07_c4_S11_R1_001.fastq.gz,,,H6
 230126,1,libB,antibody,AUSAB-07,0.00153284,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230126_VH00699_256_AACJTHKM5/Unaligned/Project_fwelsh/AUSAB-07_c5_S12_R1_001.fastq.gz,,,H6
 230126,1,libB,antibody,AUSAB-07,0.001021893,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230126_VH00699_256_AACJTHKM5/Unaligned/Project_fwelsh/AUSAB-07_c6_S13_R1_001.fastq.gz,,,H6
-230126,1,libB,antibody,AUSAB-07,0.000681262,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230126_VH00699_256_AACJTHKM5/Unaligned/Project_fwelsh/AUSAB-07_c7_S14_R1_001.fastq.gz,,,H6
+230126,1,libB,antibody,AUSAB-07,0.000681262,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230126_VH00699_256_AACJTHKM5/Unaligned/Project_fwelsh/AUSAB-07_c7_S14_R1_001.fastq.gz,yes,,H6
 230126,1,libB,antibody,AUSAB-11,0.0225,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230126_VH00699_256_AACJTHKM5/Unaligned/Project_fwelsh/AUSAB-11_c1_S15_R1_001.fastq.gz,yes,,H6
 230126,1,libB,antibody,AUSAB-11,0.015,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230126_VH00699_256_AACJTHKM5/Unaligned/Project_fwelsh/AUSAB-11_c2_S16_R1_001.fastq.gz,,,H6
 230126,1,libB,antibody,AUSAB-11,0.01,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230126_VH00699_256_AACJTHKM5/Unaligned/Project_fwelsh/AUSAB-11_c3_S17_R1_001.fastq.gz,,,H6
@@ -133,7 +133,7 @@ date,virus_batch,library,sample_type,antibody,antibody_concentration,replicate,f
 230221,1,libA,antibody,2389,0.018183,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230221_VH00699_267_AACLVYHM5/Unaligned/Project_fwelsh/2389_c3_S11_R1_001.fastq.gz,,,H6
 230221,1,libA,antibody,2389,0.012122,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230221_VH00699_267_AACLVYHM5/Unaligned/Project_fwelsh/2389_c4_S12_R1_001.fastq.gz,,,H6
 230221,1,libA,antibody,2462,0.0364545,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230221_VH00699_267_AACLVYHM5/Unaligned/Project_fwelsh/2462_c1_S13_R1_001.fastq.gz,,,H6
-230221,1,libA,antibody,2462,0.024303,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230221_VH00699_267_AACLVYHM5/Unaligned/Project_fwelsh/2462_c2_S14_R1_001.fastq.gz,,,H6
+230221,1,libA,antibody,2462,0.024303,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230221_VH00699_267_AACLVYHM5/Unaligned/Project_fwelsh/2462_c2_S14_R1_001.fastq.gz,yes,,H6
 230221,1,libA,antibody,2462,0.016202,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230221_VH00699_267_AACLVYHM5/Unaligned/Project_fwelsh/2462_c3_S15_R1_001.fastq.gz,,,H6
 230221,1,libA,antibody,2462,0.010801333,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230221_VH00699_267_AACLVYHM5/Unaligned/Project_fwelsh/2462_c4_S16_R1_001.fastq.gz,,,H6
 230221,1,libA,antibody,3944,0.004272,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230221_VH00699_267_AACLVYHM5/Unaligned/Project_fwelsh/3944_c1_S17_R1_001.fastq.gz,,,H6
