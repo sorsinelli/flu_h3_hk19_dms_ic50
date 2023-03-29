@@ -2,7 +2,18 @@
 Antibody-escape averaged across replicates
 ------------------------------------------
 
+- :doc:`1C04 <avg_antibody_escape_1C04>`
+- :doc:`5G04 <avg_antibody_escape_5G04>`
+- :doc:`AUSAB-13 <avg_antibody_escape_AUSAB-13>`
+- :doc:`1C04-5G04 <avg_antibody_escape_1C04-5G04>`
+- :doc:`AUSAB-05 <avg_antibody_escape_AUSAB-05>`
+- :doc:`AUSAB-07 <avg_antibody_escape_AUSAB-07>`
+- :doc:`AUSAB-11 <avg_antibody_escape_AUSAB-11>`
+- :doc:`2323 <avg_antibody_escape_2323>`
 - :doc:`2367 <avg_antibody_escape_2367>`
+- :doc:`2389 <avg_antibody_escape_2389>`
+- :doc:`2462 <avg_antibody_escape_2462>`
+- :doc:`3944 <avg_antibody_escape_3944>`
 - :doc:`2343 <avg_antibody_escape_2343>`
 - :doc:`2350 <avg_antibody_escape_2350>`
 - :doc:`2365 <avg_antibody_escape_2365>`
