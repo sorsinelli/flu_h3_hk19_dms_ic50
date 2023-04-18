@@ -24,4 +24,9 @@ Antibody-escape averaged across replicates
 - :doc:`4299 <avg_antibody_escape_4299>`
 - :doc:`3973 <avg_antibody_escape_3973>`
 - :doc:`4584 <avg_antibody_escape_4584>`
+- :doc:`2380 <avg_antibody_escape_2380>`
+- :doc:`3856 <avg_antibody_escape_3856>`
+- :doc:`3857 <avg_antibody_escape_3857>`
+- :doc:`3862 <avg_antibody_escape_3862>`
+- :doc:`3895 <avg_antibody_escape_3895>`
 
