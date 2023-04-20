@@ -47,11 +47,25 @@ Interactive plots of mutation antibody escape
 - `1C04-5G04 escape plot <1C04-5G04_escape_plot.html>`_
 - `1C04 escape plot <1C04_escape_plot.html>`_
 - `2323 escape plot <2323_escape_plot.html>`_
+- `2343 escape plot <2343_escape_plot.html>`_
+- `2350 escape plot <2350_escape_plot.html>`_
+- `2365 escape plot <2365_escape_plot.html>`_
 - `2367 escape plot <2367_escape_plot.html>`_
+- `2380 escape plot <2380_escape_plot.html>`_
+- `2382 escape plot <2382_escape_plot.html>`_
+- `2388 escape plot <2388_escape_plot.html>`_
 - `2389 escape plot <2389_escape_plot.html>`_
 - `2462 escape plot <2462_escape_plot.html>`_
+- `2463 escape plot <2463_escape_plot.html>`_
+- `3856 escape plot <3856_escape_plot.html>`_
+- `3857 escape plot <3857_escape_plot.html>`_
+- `3862 escape plot <3862_escape_plot.html>`_
+- `3866 escape plot <3866_escape_plot.html>`_
+- `3895 escape plot <3895_escape_plot.html>`_
 - `3944 escape plot <3944_escape_plot.html>`_
-- `3x-1C04 5G04 escape plot <3x-1C04_5G04_escape_plot.html>`_
+- `3973 escape plot <3973_escape_plot.html>`_
+- `4299 escape plot <4299_escape_plot.html>`_
+- `4584 escape plot <4584_escape_plot.html>`_
 - `5G04 escape plot <5G04_escape_plot.html>`_
 - `AUSAB-05 escape plot <AUSAB-05_escape_plot.html>`_
 - `AUSAB-07 escape plot <AUSAB-07_escape_plot.html>`_

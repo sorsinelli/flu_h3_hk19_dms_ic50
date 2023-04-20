@@ -29,7 +29,7 @@ mAb_default: &mAb_default
 # default configuration of polyclonal sera
 sera_default: &sera_default
   <<: *overall_default
-  max_epitopes: 2
+  max_epitopes: 1
   fit_kwargs:
     reg_escape_weight: 0.1
     reg_spread_weight: 0.25
@@ -91,4 +91,34 @@ AUSAB-13_2-fold:
 2462:
   <<: *ped_sera_default
 3944:
+  <<: *ped_sera_default
+2343:
+  <<: *ped_sera_default
+2350:
+  <<: *ped_sera_default
+2365:
+  <<: *ped_sera_default
+2382:
+  <<: *ped_sera_default
+3866:
+  <<: *ped_sera_default
+2388:
+  <<: *ped_sera_default
+2463:
+  <<: *ped_sera_default
+4299:
+  <<: *ped_sera_default
+3973:
+  <<: *ped_sera_default
+4584:
+  <<: *ped_sera_default
+2380:
+  <<: *ped_sera_default
+3856:
+  <<: *ped_sera_default
+3857:
+  <<: *ped_sera_default
+3862:
+  <<: *ped_sera_default
+3895:
   <<: *ped_sera_default
