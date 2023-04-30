@@ -44,10 +44,13 @@ Data files
 
 Interactive plots of mutation antibody escape
 ---------------------------------------------
+- `150C escape plot <150C_escape_plot.html>`_
+- `18C escape plot <18C_escape_plot.html>`_
 - `197C escape plot <197C_escape_plot.html>`_
 - `199C escape plot <199C_escape_plot.html>`_
 - `1C04-5G04 escape plot <1C04-5G04_escape_plot.html>`_
 - `1C04 escape plot <1C04_escape_plot.html>`_
+- `210C escape plot <210C_escape_plot.html>`_
 - `215C escape plot <215C_escape_plot.html>`_
 - `2323 escape plot <2323_escape_plot.html>`_
 - `2343 escape plot <2343_escape_plot.html>`_
@@ -69,9 +72,12 @@ Interactive plots of mutation antibody escape
 - `3895 escape plot <3895_escape_plot.html>`_
 - `3944 escape plot <3944_escape_plot.html>`_
 - `3973 escape plot <3973_escape_plot.html>`_
+- `3x-1C04 5G04 escape plot <3x-1C04_5G04_escape_plot.html>`_
 - `4299 escape plot <4299_escape_plot.html>`_
 - `4584 escape plot <4584_escape_plot.html>`_
 - `5G04 escape plot <5G04_escape_plot.html>`_
+- `68C escape plot <68C_escape_plot.html>`_
+- `74C escape plot <74C_escape_plot.html>`_
 - `AUSAB-05 escape plot <AUSAB-05_escape_plot.html>`_
 - `AUSAB-07 escape plot <AUSAB-07_escape_plot.html>`_
 - `AUSAB-11 escape plot <AUSAB-11_escape_plot.html>`_
