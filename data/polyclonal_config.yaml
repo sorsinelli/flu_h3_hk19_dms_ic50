@@ -132,3 +132,13 @@ AUSAB-13_2-fold:
   <<: *ped_sera_default
 197C:
   <<: *ped_sera_default
+210C:
+  <<: *ped_sera_default
+74C:
+  <<: *ped_sera_default
+68C:
+  <<: *ped_sera_default
+150C:
+  <<: *ped_sera_default
+18C:
+  <<: *ped_sera_default
