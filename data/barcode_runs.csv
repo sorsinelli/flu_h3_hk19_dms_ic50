@@ -337,3 +337,36 @@ date,virus_batch,library,sample_type,antibody,antibody_concentration,replicate,f
 230425,1,libA,antibody,18C,0.0237255,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230428_VH00319_347_AACMN53M5/Unaligned/Project_fwelsh/18C_c3_S19_R1_001.fastq.gz,,,RNA_spike-in
 230425,1,libA,antibody,18C,0.01186275,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230428_VH00319_347_AACMN53M5/Unaligned/Project_fwelsh/18C_c4_S20_R1_001.fastq.gz,,,RNA_spike-in
 230425,1,libA,no-antibody_control,,,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230428_VH00319_347_AACMN53M5/Unaligned/Project_fwelsh/no-Ab_1_S21_R1_001.fastq.gz;/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230428_VH00319_347_AACMN53M5/Unaligned/Project_fwelsh/no-Ab_2_S22_R1_001.fastq.gz;/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230428_VH00319_347_AACMN53M5/Unaligned/Project_fwelsh/no-Ab_3_S23_R1_001.fastq.gz,,,RNA_spike-in
+230502,1,libB,antibody,34C,0.004,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/34C_c1_S1_R1_001.fastq.gz,,,H6
+230502,1,libB,antibody,34C,0.002,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/34C_c2_S2_R1_001.fastq.gz,,,H6
+230502,1,libB,antibody,34C,0.001,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/34C_c3_S3_R1_001.fastq.gz,,,H6
+230502,1,libB,antibody,215C,0.0088,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/215C_c1_S4_R1_001.fastq.gz,,,H6
+230502,1,libB,antibody,215C,0.0044,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/215C_c2_S5_R1_001.fastq.gz,,,H6
+230502,1,libB,antibody,215C,0.0022,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/215C_c3_S6_R1_001.fastq.gz,,,H6
+230502,1,libB,antibody,33C,0.02,2,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/33C_c1_S7_R1_001.fastq.gz,,,RNA_spike-in
+230502,1,libB,antibody,33C,0.01,2,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/33C_c2_S8_R1_001.fastq.gz,,,RNA_spike-in
+230502,1,libB,antibody,33C,0.005,2,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/33C_c3_S9_R1_001.fastq.gz,,,RNA_spike-in
+230502,1,libB,antibody,199C,0.06,2,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/199C_c1_S10_R1_001.fastq.gz,,,RNA_spike-in
+230502,1,libB,antibody,199C,0.03,2,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/199C_c2_S11_R1_001.fastq.gz,,,RNA_spike-in
+230502,1,libB,antibody,199C,0.015,2,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/199C_c3_S12_R1_001.fastq.gz,,,RNA_spike-in
+230502,1,libB,antibody,197C,0.0474,2,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/197C_c1_S13_R1_001.fastq.gz,,,RNA_spike-in
+230502,1,libB,antibody,197C,0.0237,2,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/197C_c2_S14_R1_001.fastq.gz,,,RNA_spike-in
+230502,1,libB,antibody,197C,0.01185,2,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/197C_c3_S15_R1_001.fastq.gz,,,RNA_spike-in
+230502,1,libB,antibody,74C,0.035,2,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/74C_c1_S16_R1_001.fastq.gz,,,RNA_spike-in
+230502,1,libB,antibody,74C,0.0175,2,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/74C_c2_S17_R1_001.fastq.gz,,,RNA_spike-in
+230502,1,libB,antibody,74C,0.00875,2,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/74C_c3_S18_R1_001.fastq.gz,,,RNA_spike-in
+230502,1,libB,antibody,68C,0.09,2,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/68C_c1_S19_R1_001.fastq.gz,,,RNA_spike-in
+230502,1,libB,antibody,68C,0.045,2,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/68C_c2_S20_R1_001.fastq.gz,,,RNA_spike-in
+230502,1,libB,antibody,68C,0.0225,2,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/68C_c3_S21_R1_001.fastq.gz,,,RNA_spike-in
+230502,1,libB,antibody,150C,0.0472,2,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/150C_c1_S22_R1_001.fastq.gz,,,RNA_spike-in
+230502,1,libB,antibody,150C,0.0236,2,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/150C_c2_S23_R1_001.fastq.gz,,,RNA_spike-in
+230502,1,libB,antibody,150C,0.0118,2,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/150C_c3_S24_R1_001.fastq.gz,,,RNA_spike-in
+230502,1,libB,antibody,18C,0.0474,2,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/18C_c1_S25_R1_001.fastq.gz,,,RNA_spike-in
+230502,1,libB,antibody,18C,0.0237,2,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/18C_c2_S26_R1_001.fastq.gz,,,RNA_spike-in
+230502,1,libB,antibody,18C,0.01185,2,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/18C_c3_S27_R1_001.fastq.gz,,,RNA_spike-in
+230502,1,libB,antibody,210C,0.09,2,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/210C_c1_S28_R1_001.fastq.gz,,,RNA_spike-in
+230502,1,libB,antibody,210C,0.045,2,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/210C_c2_S29_R1_001.fastq.gz,,,RNA_spike-in
+230502,1,libB,antibody,210C,0.0225,2,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/210C_c3_S30_R1_001.fastq.gz,,,RNA_spike-in
+230502,1,libB,antibody,210C,0.01125,2,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/210C_c4_S31_R1_001.fastq.gz,,,RNA_spike-in
+230502,1,libB,no-antibody_control,,,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/no-Ab_1_S32_R1_001.fastq.gz;/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/no-Ab_2_S33_R1_001.fastq.gz,,repeated for both neut standards,H6
+230502,1,libB,no-antibody_control,,,2,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/no-Ab_1_S32_R1_001.fastq.gz;/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/230508_VH00319_352_AAC3F5KHV/Unaligned/Project_fwelsh/no-Ab_2_S33_R1_001.fastq.gz,,repeated for both neut standards,RNA_spike-in

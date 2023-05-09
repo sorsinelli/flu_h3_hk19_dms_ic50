@@ -68,4 +68,14 @@ Fit ``polyclonal`` models
 - :doc:`libA_230425_1_68C_1 <fit_polyclonal_libA_230425_1_68C_1>`
 - :doc:`libA_230425_1_150C_1 <fit_polyclonal_libA_230425_1_150C_1>`
 - :doc:`libA_230425_1_18C_1 <fit_polyclonal_libA_230425_1_18C_1>`
+- :doc:`libB_230502_1_34C_1 <fit_polyclonal_libB_230502_1_34C_1>`
+- :doc:`libB_230502_1_215C_1 <fit_polyclonal_libB_230502_1_215C_1>`
+- :doc:`libB_230502_1_33C_2 <fit_polyclonal_libB_230502_1_33C_2>`
+- :doc:`libB_230502_1_199C_2 <fit_polyclonal_libB_230502_1_199C_2>`
+- :doc:`libB_230502_1_197C_2 <fit_polyclonal_libB_230502_1_197C_2>`
+- :doc:`libB_230502_1_74C_2 <fit_polyclonal_libB_230502_1_74C_2>`
+- :doc:`libB_230502_1_68C_2 <fit_polyclonal_libB_230502_1_68C_2>`
+- :doc:`libB_230502_1_150C_2 <fit_polyclonal_libB_230502_1_150C_2>`
+- :doc:`libB_230502_1_18C_2 <fit_polyclonal_libB_230502_1_18C_2>`
+- :doc:`libB_230502_1_210C_2 <fit_polyclonal_libB_230502_1_210C_2>`
 
