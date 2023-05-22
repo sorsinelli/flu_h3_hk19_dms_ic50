@@ -54,8 +54,6 @@ cocktail_default: &cocktail_default
 # define configuration for specific sera or antibodies, merging above defaults
 AUSAB-02:
   <<: *sera_default
-AUSAB-05:
-  <<: *sera_default
 AUSAB-07:
   <<: *sera_default
 AUSAB-11:
@@ -141,4 +139,16 @@ AUSAB-13_2-fold:
 150C:
   <<: *ped_sera_default
 18C:
+  <<: *ped_sera_default
+ferret_1:
+  <<: *ped_sera_default
+ferret_2:
+  <<: *ped_sera_default
+ferret_3:
+  <<: *ped_sera_default
+AUSAB-05:
+  <<: *ped_sera_default
+AUSAB-08:
+  <<: *ped_sera_default
+AUSAB-16:
   <<: *ped_sera_default
