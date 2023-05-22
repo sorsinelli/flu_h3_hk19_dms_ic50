@@ -80,6 +80,11 @@ Interactive plots of mutation antibody escape
 - `74C escape plot <74C_escape_plot.html>`_
 - `AUSAB-05 escape plot <AUSAB-05_escape_plot.html>`_
 - `AUSAB-07 escape plot <AUSAB-07_escape_plot.html>`_
+- `AUSAB-08 escape plot <AUSAB-08_escape_plot.html>`_
 - `AUSAB-11 escape plot <AUSAB-11_escape_plot.html>`_
 - `AUSAB-13 escape plot <AUSAB-13_escape_plot.html>`_
+- `AUSAB-16 escape plot <AUSAB-16_escape_plot.html>`_
+- `ferret 1 escape plot <ferret_1_escape_plot.html>`_
+- `ferret 2 escape plot <ferret_2_escape_plot.html>`_
+- `ferret 3 escape plot <ferret_3_escape_plot.html>`_
 
