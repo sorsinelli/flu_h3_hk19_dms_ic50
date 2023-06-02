@@ -22,7 +22,7 @@ overall_default: &overall_default
     x: 0.9
     icXX_col: IC90
     log_fold_change_icXX_col: log2 fold change IC90
-    check_wt_icXX: null
+    check_wt_icXX: [0.00001, 100000]
     
 # default configuration for monoclonal antibodies (mAbs)
 mAb_default: &mAb_default
