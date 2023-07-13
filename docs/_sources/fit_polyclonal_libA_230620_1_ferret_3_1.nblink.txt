@@ -1,0 +1,3 @@
+{
+    "path": "../notebooks/fit_polyclonal_libA_230620_1_ferret_3_1.ipynb"
+}
