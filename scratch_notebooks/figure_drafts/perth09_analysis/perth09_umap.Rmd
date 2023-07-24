@@ -1,0 +1,204 @@
+---
+title: "H3N2 DMS Exploratory Analysis"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+date: 'Compiled: `r format(Sys.Date(), "%B %d, %Y")`'
+editor_options:
+  chunk_output_type: inline
+---
+
+```{r markdown.setup, include=FALSE}
+knitr::opts_chunk$set(
+  tidy = TRUE,
+  fig.width = 12,
+  tidy.opts = list(width.cutoff = 95),
+  message = FALSE,
+  warning = FALSE
+)
+```
+
+Loading required packages.
+
+```{r}
+library(tidyr)
+library(dplyr)
+library(umap)
+library(scales)
+library(ggplot2)
+library(cowplot)
+library(patchwork)
+```
+
+Read in the data. This is the `escape_df` created in the third code chunk in the `mds_analysis.ipynb` notebook to use as a starting point here. 
+
+```{r}
+escape_df <- read.csv("~/Downloads/230721_perth09_df.csv", row.names = 1)
+```
+
+### Preprocessing
+
+The `times_seen` filter was already applied in the python notebook, filtering for a minimum of 5. We can then subset to features measured for every serum. 
+
+```{r filter.features}
+# create each feature
+escape_df$feature <- paste0(escape_df$wildtype, escape_df$site, escape_df$mutant)
+
+# filter out stop codons
+escape_df %>%
+    filter(mutant != "*") -> escape_df
+
+# helper function to create serum by measurement (ic90 or beta) matrices
+CreateFeatureMat <- function(df, measure) {
+    df[, c("feature", measure, "serum")] %>%
+        pivot_wider(names_from = serum, values_from = measure) -> df
+    mat <- as.matrix(x = df[, -1])
+    rownames(x = mat) <- df$feature
+    mat <- mat[complete.cases(mat), ]
+    return(t(x = mat))
+}
+
+# helper function to create serum by measurement (ic90 or beta) matrices, aggregate
+# measurement by site
+CreateFeatureMatSite <- function(df, measure) {
+    df$measure <- df[, measure]
+    df %>%
+        group_by(site, serum) %>%
+        summarize(measure = sum(measure)) -> df
+    df[, c("site", "measure", "serum")] %>%
+        pivot_wider(names_from = serum, values_from = measure) -> df
+    mat <- as.matrix(x = df[, -1])
+    rownames(x = mat) <- df$site
+    mat <- mat[complete.cases(mat), ]
+    return(t(x = mat))
+}
+
+aa <- CreateFeatureMat(escape_df, "escape")
+site <- CreateFeatureMatSite(escape_df, "escape")
+```
+
+
+### Normalization
+
+Here I'm normalizing each serum such that the total value of our escape measurement is the same. I'm not completely convinced that this is the best approach here and would probably be a good idea to try out other options. 
+
+```{r}
+NormalizeSera <- function(mat) {
+  mat <- t(apply(X = mat, MARGIN = 1, FUN = function(x) x/max(abs(x))))
+  return(mat)
+}
+aa_norm <- NormalizeSera(aa)
+site_norm <- NormalizeSera(site)
+```
+
+
+We'll try a basic z-score scaling (scaling to mean 0, variance of 1) for each feature. This is generally a good idea before running PCA.
+
+```{r norm}
+# ZScoreFeature <- function(mat) {
+#   mat <- apply(X = mat, MARGIN = 2, FUN = function(x) (x - mean(x))/ sd(x))
+#   return(mat)
+# }
+# ic90_mat_scaled <- ZScoreFeature(ic90_mat_norm)
+# beta_mat_scaled <- ZScoreFeature(beta_mat_norm)
+```
+
+### PCA
+Now, we'll run a PCA on the normalized matrices.
+
+```{r pca}
+aa_pca <- prcomp(aa_norm)
+site_pca <- prcomp(site_norm)
+```
+
+To select the principle components to use downstream, look at elbow plots. This is plotting the amount of variance explained by each component.
+
+```{r elbow}
+ElbowPlot <- function(pca_res, ndim = 20) {
+  df <- data.frame(
+    sdev = pca_res$sdev, 
+    pc = 1:length(pca_res$sdev)
+  )
+  ggplot(df[1:ndim, ], aes(x = pc, y = sdev)) + 
+    geom_point() + 
+    theme_cowplot() +
+    xlab("PC") + 
+    ylab("Standard Deviation")
+}
+p1 <- ElbowPlot(aa_pca)
+p2 <- ElbowPlot(site_pca)
+p1 + p2
+```
+
+There's rarely a definitely best place to draw this cutoff but let's try keeping the top 5. 
+
+### UMAP
+
+```{r umap}
+# create mapping dictionary of serum to age group
+serum_to_age <- sapply(unique(escape_df$serum), FUN = function(x) escape_df[escape_df$serum == x, "sample_type"][1])
+
+serum_to_serum <- sapply(unique(escape_df$serum), FUN = function(x) escape_df[escape_df$serum == x, "serum"][1])
+
+# Helper function to run UMAP on pca results and plot the results
+RunUMAP <- function(pca_res, dims, serum_to_age) {
+  umap.config <- umap.defaults
+  umap.config$n_neighbors <- 10
+  umap.config$random_state <- 10
+  umap_pca_res <- umap(pca_res$x[, dims], config = umap.config)
+  umap_pca_df <- data.frame(
+    x = umap_pca_res$layout[, 1],
+    y = umap_pca_res$layout[, 2],
+    age = unname(serum_to_age[rownames(umap_pca_res$layout)]),
+    serum= unname(serum_to_serum[rownames(umap_pca_res$layout)])
+  )
+  return(umap_pca_df)
+}
+PlotUMAP <- function(umap_df) {
+  return(ggplot(umap_df, aes(x =x , y = y, color = age, 
+                             # label=serum
+                             )) + 
+           geom_point(size = 3) + 
+           xlab("UMAP 1") +
+           ylab("UMAP 2") +
+           coord_fixed() +
+           scale_color_brewer(palette = "Set2") +
+           # geom_text(hjust=1, vjust=-1) +
+           theme_cowplot()
+  )
+}
+
+aa_umap <- RunUMAP(aa_pca, 1:4, serum_to_age)
+p1 <- PlotUMAP(aa_umap) + ggtitle("mutation-level")
+site_umap <- RunUMAP(site_pca, 1:4, serum_to_age)
+p2 <- PlotUMAP(site_umap) + ggtitle("site-level")
+
+p2 + plot_layout(guides = 'collect')
+```
+
+This seems to give reasonable separation of the age groups without much tuning using either the ic90 or beta values. 
+
+### PCA features
+
+Going back, we can start to ask what is driving the separation here. Particularly, what features/mutations are contributing most to the top PCs we fed into the UMAP. Maybe some of these could be interesting in terms of what is distinguishing the different age groups?
+
+```{r pcs}
+TopFeatures <- function(pca_res, dims, n = 5) {
+  for (dim in dims) {
+    pos <- head(sort(pca_res$rotation[, dim], decreasing = T))
+    neg <- head(sort(pca_res$rotation[, dim]))
+    print(paste0("PC ", dim))
+    print(paste0("Positive: ", paste0(names(pos), collapse = ", ")))
+    print(paste0("Negative: ", paste0(names(neg), collapse = ", ")))
+  }
+}
+TopFeatures(site_pca, dims = 1:10)
+```
+
+```{r}
+TopFeatures(aa_pca, dims = 1:10)
+```
+
+
+
