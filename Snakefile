@@ -64,7 +64,7 @@ rule process_perth2009_data:
 # Add any extra data/results files for docs with name: file
 extra_data_files = {
     "sequential to reference site numbering": config["site_numbering_map"],
-    "escape for Perth2009 DMS": rules.process_perth2009_data.output.csv,
+    "escape for Perth2009 DMS": "results/perth2009/merged_escape.csv",
 }
 
 
