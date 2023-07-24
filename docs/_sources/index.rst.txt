@@ -21,6 +21,7 @@ details, using dropdowns, etc.
    analyze_prob_escape
    fit_polyclonal
    avg_antibody_escape
+   process_perth2009_data
 
 Data files
 ----------
@@ -33,6 +34,7 @@ Data files
 - `antibody selection experiments <https://github.com/dms-vep/flu_h3_hk19_dms/blob/main/./results/prob_escape/antibody_selections.csv>`_
 - `antibody escape values <https://github.com/dms-vep/flu_h3_hk19_dms/blob/main/./results/antibody_escape>`_
 - `sequential to reference site numbering <https://github.com/dms-vep/flu_h3_hk19_dms/blob/main/./data/site_map.csv>`_
+- `escape for Perth2009 DMS <https://github.com/dms-vep/flu_h3_hk19_dms/blob/main/./results/perth2009/merged_escape.csv>`_
 
 Interactive plots of mutation antibody escape
 ---------------------------------------------
