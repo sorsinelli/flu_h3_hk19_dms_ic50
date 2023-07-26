@@ -1,4 +1,5 @@
 library,sample,avg_counts,min_avg_counts,adequate_counts,exclude_after_counts
+libA,220303_1_plasmid_1,159.0038373905744,10,True,no
 libA,221021_1_antibody_1C04_0.05_1,121.49905564216333,10,True,yes
 libA,221021_1_antibody_1C04_0.1_1,165.01112243674302,10,True,no
 libA,221021_1_antibody_1C04_0.2_1,82.19046048686893,10,True,no
@@ -260,6 +261,7 @@ libA,230620_1_antibody_ferret_3_0.0014_1,189.78979793740257,10,True,no
 libA,230620_1_antibody_ferret_3_0.0028_1,348.57913119079024,10,True,no
 libA,230620_1_no-antibody_control_1,272.07228084902266,10,True,no
 libA,230620_1_no-antibody_control_2,272.07228084902266,10,True,no
+libB,220303_1_plasmid_1,128.28649504486015,10,True,no
 libB,221108_1_antibody_1C04-5G04_1.37_1,29.062182607165894,10,True,yes
 libB,221108_1_antibody_1C04-5G04_10.4_1,34.06887937606286,10,True,yes
 libB,221108_1_antibody_1C04-5G04_2.05_1,39.98559784202193,10,True,yes
