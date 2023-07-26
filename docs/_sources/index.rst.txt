@@ -17,10 +17,14 @@ details, using dropdowns, etc.
    analyze_pacbio_ccs
    build_pacbio_consensus
    build_codon_variants
+   analyze_func_scores
+   fit_globalepistasis
+   avg_muteffects
    analyze_variant_counts
    analyze_prob_escape
    fit_polyclonal
    avg_antibody_escape
+   process_perth2009_data
 
 Data files
 ----------
@@ -30,9 +34,19 @@ Data files
 - `codon-variant table <https://github.com/dms-vep/flu_h3_hk19_dms/blob/main/./results/variants/codon_variants.csv>`_
 - `processed barcode sequencing runs <https://github.com/dms-vep/flu_h3_hk19_dms/blob/main/./results/barcode_runs/processed_barcode_runs.csv>`_
 - `variant counts <https://github.com/dms-vep/flu_h3_hk19_dms/blob/main/./results/variant_counts>`_
+- `functional selection experiments <https://github.com/dms-vep/flu_h3_hk19_dms/blob/main/./results/func_scores/functional_selections.csv>`_
+- `mutation effects for each functional selection <https://github.com/dms-vep/flu_h3_hk19_dms/blob/main/./results/globalepistasis_fits>`_
+- `mutation functional effects replicate average (observed phenotype) <https://github.com/dms-vep/flu_h3_hk19_dms/blob/main/./results/muteffects_functional/muteffects_observed.csv>`_
+- `mutation functional effects replicate average (latent phenotype) <https://github.com/dms-vep/flu_h3_hk19_dms/blob/main/./results/muteffects_functional/muteffects_latent.csv>`_
 - `antibody selection experiments <https://github.com/dms-vep/flu_h3_hk19_dms/blob/main/./results/prob_escape/antibody_selections.csv>`_
 - `antibody escape values <https://github.com/dms-vep/flu_h3_hk19_dms/blob/main/./results/antibody_escape>`_
 - `sequential to reference site numbering <https://github.com/dms-vep/flu_h3_hk19_dms/blob/main/./data/site_map.csv>`_
+- `escape for Perth2009 DMS <https://github.com/dms-vep/flu_h3_hk19_dms/blob/main/./results/perth2009/merged_escape.csv>`_
+
+Interactive plots of mutation functional effects
+------------------------------------------------
+- `Observed phenotype effects <muteffects_observed_heatmap.html>`_
+- `Latent phenotype effects <muteffects_latent_heatmap.html>`_
 
 Interactive plots of mutation antibody escape
 ---------------------------------------------
