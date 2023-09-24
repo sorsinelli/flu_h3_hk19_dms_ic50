@@ -1,0 +1,73 @@
+LOCUS       rna-spikein-std_template_DNA            1200 bp ds-DNA     linear       24-SEP-2023
+DEFINITION  Template DNA fragment for in vitro transcription of RNA spike-in standard,
+			for use in DMS of HongKong/2019. Sequence is identical to library backbone,
+			but with the HA ectodomain replaced by eGFP. Ensures that the RNA standard is 
+			of similar length to library vRNA/mRNA, but is easily distinguishable. T7 
+			promoter sequence has been added upstream of U13 for in vitro transcription.
+FEATURES             Location/Qualifiers
+     misc_feature    complement(1..12)
+                     /label="U12"
+                     /ApEinfo_revcolor="#75c6a9"
+                     /ApEinfo_fwdcolor="#75c6a9"
+     misc_feature    complement(1..32)
+                     /label="3' NCR"
+                     /ApEinfo_revcolor="#84b0dc"
+                     /ApEinfo_fwdcolor="#84b0dc"
+     misc_feature    33..89
+                     /label="WSN first 19 amino acids"
+                     /ApEinfo_revcolor="#f8d3a9"
+                     /ApEinfo_fwdcolor="#f8d3a9"
+     misc_feature    99..818
+                     /label="eGFP"
+                     /ApEinfo_revcolor="#d59687"
+                     /ApEinfo_fwdcolor="#d59687"
+     misc_feature    822..959
+                     /label="h3_last-46"
+                     /ApEinfo_revcolor="#ff9ccd"
+                     /ApEinfo_fwdcolor="#ff9ccd"
+     misc_feature    967..982
+                     /label="barcode"
+                     /ApEinfo_revcolor="#b1ff67"
+                     /ApEinfo_fwdcolor="#b1ff67"
+     misc_feature    complement(983..1015)
+                     /label="read1"
+                     /ApEinfo_revcolor="#d59687"
+                     /ApEinfo_fwdcolor="#d59687"
+     misc_feature    1025..1129
+                     /label="packaging signal"
+                     /ApEinfo_revcolor="#f58a5e"
+                     /ApEinfo_fwdcolor="#f58a5e"
+     misc_feature    complement(1130..1174)
+                     /label="5' NCR"
+                     /ApEinfo_revcolor="#c7b0e3"
+                     /ApEinfo_fwdcolor="#c7b0e3"
+     misc_feature    complement(1163..1174)
+                     /label="U13"
+                     /ApEinfo_revcolor="#ff9ccd"
+                     /ApEinfo_fwdcolor="#ff9ccd"
+     misc_feature    complement(1175..1200)
+                     /label="T7 promoter"
+                     /ApEinfo_revcolor="#d59687"
+                     /ApEinfo_fwdcolor="#d59687"
+ORIGIN
+        1 agcaaaagca ggggaaaata aaaacaacca aaatgaaggc aaaactactg gtcctgttat
+       61 atgcatttgt agctacagat gcagacacag gagacgctat ggtgagcaag ggcgaggagc
+      121 tgttcaccgg ggtggtgccc atcctggtcg agctggacgg cgacgtaaac ggccacaagt
+      181 tcagcgtgtc cggcgagggc gagggcgatg ccacctacgg caagctgacc ctgaagttca
+      241 tctgcaccac cggcaagctg cccgtgccct ggcccaccct cgtgaccacc ctgacctacg
+      301 gcgtgcagtg cttcagccgc taccccgacc acatgaagca gcacgacttc ttcaagtccg
+      361 ccatgcccga aggctacgtc caggagcgca ccatcttctt caaggacgac ggcaactaca
+      421 agacccgcgc cgaggtgaag ttcgagggcg acaccctggt gaaccgcatc gagctgaagg
+      481 gcatcgactt caaggaggac ggcaacatcc tggggcacaa gctggagtac aactacaaca
+      541 gccacaacgt ctatatcatg gccgacaagc agaagaacgg catcaaggtg aacttcaaga
+      601 tccgccacaa catcgaggac ggcagcgtgc agctcgccga ccactaccag cagaacaccc
+      661 ccatcggcga cggccccgtg ctgctgcccg acaaccacta cctgagcacc cagtccgccc
+      721 tgagcaaaga ccccaacgag aagcgcgatc acatggtcct gctggagttc gtgaccgccg
+      781 ccgggatcac tctcggcatg gacgagctgt acaagtaata gGTTGAGCTG AAGTCAGGAT
+      841 ACAAAGATTG GATCctatgg atttcctttg ccatTtcTtg CttCCtActG tgCgtAgcAC
+      901 tACtAggCtt TatTatgtgg gcGtgTcaGa aAggCAACAt CcGAtgcAaC atCtgTatAt
+      961 AaTGAGnnnn nnnnnnnnnn nnagatcgga agagcgtcgt gtagggaaag agtgtgcggc
+     1021 cgctatctac tcaactgtcg ccagttcact ggtgcttttg gtctccctgg gggcaatcag
+     1081 tttctggatg tgttctaatg ggtctttgca gtgcagaata tgcatctgag attaggattt
+     1141 cagaaatata aggaaaaaca cccttgtttc tactCCCTAT AGTGAGTCGT ATTATCGTAA
+//
