@@ -87,7 +87,9 @@ muteffects_plot_kwargs:
       min: 1
       max: 25
 
-PDB: data/PDBs/4o5n.pdb        
+PDB: data/PDBs/4o5n.pdb 
+
+show_antibody_escape_icXX_plots: false       
 
 # ----------------------------------------------------------------------------
 # Input data to dms-vep-pipeline
