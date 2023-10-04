@@ -2,10 +2,7 @@
 Fit global epistasis models
 ---------------------------
 
-- :doc:`libA_220303_1_plasmid_1_vs_221021_1_no-antibody_control_1 <fit_globalepistasis_libA_220303_1_plasmid_1_vs_221021_1_no-antibody_control_1>`
 - :doc:`libA_220303_1_plasmid_1_vs_221027_1_no-antibody_control_1 <fit_globalepistasis_libA_220303_1_plasmid_1_vs_221027_1_no-antibody_control_1>`
-- :doc:`libA_220303_1_plasmid_1_vs_221108_1_no-antibody_control_1 <fit_globalepistasis_libA_220303_1_plasmid_1_vs_221108_1_no-antibody_control_1>`
-- :doc:`libA_220303_1_plasmid_1_vs_221223_1_no-antibody_control_1 <fit_globalepistasis_libA_220303_1_plasmid_1_vs_221223_1_no-antibody_control_1>`
 - :doc:`libA_220303_1_plasmid_1_vs_230221_1_no-antibody_control_1 <fit_globalepistasis_libA_220303_1_plasmid_1_vs_230221_1_no-antibody_control_1>`
 - :doc:`libA_220303_1_plasmid_1_vs_230317_1_no-antibody_control_1 <fit_globalepistasis_libA_220303_1_plasmid_1_vs_230317_1_no-antibody_control_1>`
 - :doc:`libA_220303_1_plasmid_1_vs_230323_1_no-antibody_control_1 <fit_globalepistasis_libA_220303_1_plasmid_1_vs_230323_1_no-antibody_control_1>`
@@ -14,9 +11,7 @@ Fit global epistasis models
 - :doc:`libA_220303_1_plasmid_1_vs_230425_1_no-antibody_control_1 <fit_globalepistasis_libA_220303_1_plasmid_1_vs_230425_1_no-antibody_control_1>`
 - :doc:`libA_220303_1_plasmid_1_vs_230517_1_no-antibody_control_1 <fit_globalepistasis_libA_220303_1_plasmid_1_vs_230517_1_no-antibody_control_1>`
 - :doc:`libA_220303_1_plasmid_1_vs_230620_1_no-antibody_control_1 <fit_globalepistasis_libA_220303_1_plasmid_1_vs_230620_1_no-antibody_control_1>`
-- :doc:`libB_220303_1_plasmid_1_vs_221108_1_no-antibody_control_1 <fit_globalepistasis_libB_220303_1_plasmid_1_vs_221108_1_no-antibody_control_1>`
 - :doc:`libB_220303_1_plasmid_1_vs_230118_1_no-antibody_control_1 <fit_globalepistasis_libB_220303_1_plasmid_1_vs_230118_1_no-antibody_control_1>`
-- :doc:`libB_220303_1_plasmid_1_vs_230126_1_no-antibody_control_1 <fit_globalepistasis_libB_220303_1_plasmid_1_vs_230126_1_no-antibody_control_1>`
 - :doc:`libB_220303_1_plasmid_1_vs_230407_1_no-antibody_control_1 <fit_globalepistasis_libB_220303_1_plasmid_1_vs_230407_1_no-antibody_control_1>`
 - :doc:`libB_220303_1_plasmid_1_vs_230412_1_no-antibody_control_1 <fit_globalepistasis_libB_220303_1_plasmid_1_vs_230412_1_no-antibody_control_1>`
 - :doc:`libB_220303_1_plasmid_1_vs_230502_1_no-antibody_control_1 <fit_globalepistasis_libB_220303_1_plasmid_1_vs_230502_1_no-antibody_control_1>`
