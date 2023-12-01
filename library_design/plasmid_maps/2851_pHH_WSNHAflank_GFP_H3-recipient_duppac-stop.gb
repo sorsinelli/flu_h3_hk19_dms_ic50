@@ -1,0 +1,278 @@
+LOCUS       2808_WSNHAflank_        3852 bp    DNA        circular     25-AUG-2020
+DEFINITION  This plasmid is the pHH vector with the WSN 5' packaging signal
+            (including the coding sequence) followed by a BsmBI site and GFP.
+            The GFP protein sequence is flanked at the 3' end by an XbaI cut
+            site, illumina read1 sequence and the 3' WSN packaging signal. This
+            plasmid is designed based on plasmid 2775 and edited to delete the
+            first three MI15 codons and add the BsmBI cut site. A single T-A
+            mutation was added to introduce a stop codon into the 3' duplicated
+            packaging signal. Confirmed by Sanger sequencing from Pol I promoter
+            to terminator.
+ACCESSION   .
+VERSION     .
+KEYWORDS    .
+SOURCE      synthetic DNA construct
+  ORGANISM  synthetic DNA construct
+REFERENCE   1  (bases 1 to 3858)
+  AUTHORS   .
+  TITLE     Direct Submission
+  JOURNAL   Exported May 28, 2020 from SnapGene Viewer 4.2.11
+            http://www.snapgene.com
+COMMENT
+COMMENT     ApEinfo:methylated:1
+FEATURES             Location/Qualifiers
+     source          1..798
+                     /organism="synthetic DNA construct"
+                     /mol_type="other DNA"
+                     /locus_tag="source:synthetic DNA construct"
+                     /label="source:synthetic DNA construct"
+                     /ApEinfo_label="source:synthetic DNA construct"
+                     /ApEinfo_fwdcolor="pink"
+                     /ApEinfo_revcolor="pink"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     primer_bind     502..546
+                     /locus_tag="For cloning NotI site"
+                     /label="For cloning NotI site"
+                     /ApEinfo_label="For cloning NotI site"
+                     /ApEinfo_fwdcolor="#14c0bd"
+                     /ApEinfo_revcolor="#4ec02b"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     terminator      complement(544..549)
+                     /locus_tag="mouse PolI terminator"
+                     /label="mouse PolI terminator"
+                     /ApEinfo_label="mouse PolI terminator"
+                     /ApEinfo_fwdcolor="#9d1b1c"
+                     /ApEinfo_revcolor="#9d1b1c"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     terminator      complement(550..709)
+                     /locus_tag="mouse PolI terminator(1)"
+                     /label="mouse PolI terminator(1)"
+                     /ApEinfo_label="mouse PolI terminator"
+                     /ApEinfo_fwdcolor="#9d1b1c"
+                     /ApEinfo_revcolor="#9d1b1c"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     misc_feature    complement(710..741)
+                     /locus_tag="3' NCR"
+                     /label="3' NCR"
+                     /ApEinfo_label="3' NCR"
+                     /ApEinfo_fwdcolor="#7eff74"
+                     /ApEinfo_revcolor="#7eff74"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     misc_feature    complement(710..721)
+                     /locus_tag="U12"
+                     /label="U12"
+                     /ApEinfo_label="U12"
+                     /ApEinfo_fwdcolor="#7eff74"
+                     /ApEinfo_revcolor="#7eff74"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     misc_feature    742..798
+                     /locus_tag="packaging signal"
+                     /label="packaging signal"
+                     /ApEinfo_label="packaging signal"
+                     /ApEinfo_fwdcolor="#7eff74"
+                     /ApEinfo_revcolor="#7eff74"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     misc_feature    742..798
+                     /locus_tag="WSN first 20 AA"
+                     /label="WSN first 20 AA"
+                     /ApEinfo_label="WSN first 20 AA"
+                     /ApEinfo_fwdcolor="#7eff74"
+                     /ApEinfo_revcolor="#7eff74"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     misc_feature    742..798
+                     /locus_tag="WSN first 19 amino acids"
+                     /label="WSN first 19 amino acids"
+                     /ApEinfo_label="WSN first 19 amino acids"
+                     /ApEinfo_fwdcolor="#7eff74"
+                     /ApEinfo_revcolor="#7eff74"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     primer_bind     complement(773..798)
+                     /locus_tag="Overlap for hifi"
+                     /label="Overlap for hifi"
+                     /ApEinfo_label="Overlap for hifi"
+                     /ApEinfo_fwdcolor="#14c0bd"
+                     /ApEinfo_revcolor="#4ec02b"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     misc_feature    808..1527
+                     /locus_tag="eGFP"
+                     /label="eGFP"
+                     /ApEinfo_label="eGFP"
+                     /ApEinfo_fwdcolor="#7eff74"
+                     /ApEinfo_revcolor="#7eff74"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     misc_feature    1528..1533
+                     /locus_tag="XbaI"
+                     /label="XbaI"
+                     /ApEinfo_label="XbaI"
+                     /ApEinfo_fwdcolor="#7eff74"
+                     /ApEinfo_revcolor="#7eff74"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     misc_feature    complement(1533..1565)
+                     /locus_tag="read1"
+                     /label="read1"
+                     /ApEinfo_label="read1"
+                     /ApEinfo_fwdcolor="#7eff74"
+                     /ApEinfo_revcolor="#7eff74"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     misc_feature    1566..1573
+                     /locus_tag="NotI"
+                     /label="NotI"
+                     /ApEinfo_label="NotI"
+                     /ApEinfo_fwdcolor="#7eff74"
+                     /ApEinfo_revcolor="#7eff74"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     misc_feature    1575..1679
+                     /locus_tag="packaging signal(1)"
+                     /label="packaging signal(1)"
+                     /ApEinfo_label="packaging signal"
+                     /ApEinfo_fwdcolor="#7eff74"
+                     /ApEinfo_revcolor="#7eff74"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     misc_feature    complement(1680..1724)
+                     /locus_tag="5' NCR"
+                     /label="5' NCR"
+                     /ApEinfo_label="5' NCR"
+                     /ApEinfo_fwdcolor="#7eff74"
+                     /ApEinfo_revcolor="#7eff74"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     misc_feature    complement(1713..1724)
+                     /locus_tag="U13"
+                     /label="U13"
+                     /ApEinfo_label="U13"
+                     /ApEinfo_fwdcolor="#7eff74"
+                     /ApEinfo_revcolor="#7eff74"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     misc_feature    complement(1725..2127)
+                     /locus_tag="Human PolI promoter"
+                     /label="Human PolI promoter"
+                     /ApEinfo_label="Human PolI promoter"
+                     /ApEinfo_fwdcolor="#7eff74"
+                     /ApEinfo_revcolor="#7eff74"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     CDS             complement(2995..3852)
+                     /locus_tag="AmpR"
+                     /label="AmpR"
+                     /ApEinfo_label="AmpR"
+                     /ApEinfo_fwdcolor="#e9d024"
+                     /ApEinfo_revcolor="#e9d024"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     source          808..3852
+                     /organism="synthetic DNA construct"
+                     /mol_type="other DNA"
+                     /locus_tag="source:synthetic DNA construct(1)"
+                     /label="source:synthetic DNA construct(1)"
+                     /ApEinfo_label="source:synthetic DNA construct"
+                     /ApEinfo_fwdcolor="pink"
+                     /ApEinfo_revcolor="pink"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     primer_bind     complement(808..826)
+                     /locus_tag="Overlap for hifi(1)"
+                     /label="Overlap for hifi(1)"
+                     /ApEinfo_label="Overlap for hifi"
+                     /ApEinfo_fwdcolor="#14c0bd"
+                     /ApEinfo_revcolor="#4ec02b"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     misc_feature    800..805
+                     /locus_tag="BsmBI seq"
+                     /label="BsmBI seq"
+                     /ApEinfo_label="BsmBI seq"
+                     /ApEinfo_fwdcolor="#ff00e8"
+                     /ApEinfo_revcolor="green"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+     misc_feature    1609..1609
+                     /locus_tag="stop codon mut"
+                     /label="stop codon mut"
+                     /ApEinfo_label="stop codon mut"
+                     /ApEinfo_fwdcolor="#ff0000"
+                     /ApEinfo_revcolor="green"
+                     /ApEinfo_graphicformat="arrow_data {{0 1 2 0 0 -1} {} 0}
+                     width 5 offset 0"
+ORIGIN
+        1 actcttcctt tttcaatatt attgaagcat ttatcagggt tattgtctca tgagcggata
+       61 catatttgaa tgtatttaga aaaataaaca aaagagtttg tagaaacgca aaaaggccat
+      121 ccgtcaggat ggccttctgc ttaatttgat gcctggcagt ttatggcggg cgtcctgccc
+      181 gccaccctcc gggccgttgc ttcgcaacgt tcaaatccgc tcccggcgga tttgtcctac
+      241 tcaggagagc gttcaccgac aaacaacaga taaaacgaaa ggcccagtct ttcgactgag
+      301 cctttcgttt tatttgatgc ctggcagttc cctactctcg catggggaga ccccacacta
+      361 ccatcggcgc tacggcgttt cacttctgag ttcggcatgg ggtcaggtgg gaccaccgcg
+      421 ctactgccgc caggcaaatt ctgttttatc agaccgcttc tgcgttctga tttaatctgt
+      481 atcaggctga aaattttttt tcatccgcca aaacagccaa ggcggccgcg ctagcggccg
+      541 atccccaaaa aaaaaaaaaa aaaaagagtc cagagtggcc ccgccgctcc gcgccggggg
+      601 gggggggggg gggggacact ttcggacatc tggtcgacct ccagcatcgg gggaaaaaaa
+      661 aaaacaaagt gtcgcccgga gtactggtcg acctccgaag ttggggggga gcaaaagcag
+      721 gggaaaataa aaacaaccaa aatgaaggca aaactactgg tcctgttata tgcatttgta
+      781 gctacagatg cagacacagg agacgctatg gtgagcaagg gcgaggagct gttcaccggg
+      841 gtggtgccca tcctggtcga gctggacggc gacgtaaacg gccacaagtt cagcgtgtcc
+      901 ggcgagggcg agggcgatgc cacctacggc aagctgaccc tgaagttcat ctgcaccacc
+      961 ggcaagctgc ccgtgccctg gcccaccctc gtgaccaccc tgacctacgg cgtgcagtgc
+     1021 ttcagccgct accccgacca catgaagcag cacgacttct tcaagtccgc catgcccgaa
+     1081 ggctacgtcc aggagcgcac catcttcttc aaggacgacg gcaactacaa gacccgcgcc
+     1141 gaggtgaagt tcgagggcga caccctggtg aaccgcatcg agctgaaggg catcgacttc
+     1201 aaggaggacg gcaacatcct ggggcacaag ctggagtaca actacaacag ccacaacgtc
+     1261 tatatcatgg ccgacaagca gaagaacggc atcaaggtga acttcaagat ccgccacaac
+     1321 atcgaggacg gcagcgtgca gctcgccgac cactaccagc agaacacccc catcggcgac
+     1381 ggccccgtgc tgctgcccga caaccactac ctgagcaccc agtccgccct gagcaaagac
+     1441 cccaacgaga agcgcgatca catggtcctg ctggagttcg tgaccgccgc cgggatcact
+     1501 ctcggcatgg acgagctgta caagtaatct agagatcgga agagcgtcgt gtagggaaag
+     1561 agtgtgcggc cgctatctac tcaactgtcg ccagttcact ggtgctttag gtctccctgg
+     1621 gggcaatcag tttctggatg tgttctaatg ggtctttgca gtgcagaata tgcatctgag
+     1681 attaggattt cagaaatata aggaaaaaca cccttgtttc tactaataac ccggcggccc
+     1741 aaaatgccga ctcggagcga aagatatacc tcccccgggg ccgggaggtc gcgtcaccga
+     1801 ccacgccgcc ggcccaggcg acgcgcgaca cggacacctg tccccaaaaa cgccaccatc
+     1861 gcagccacac acggagcgcc cggggccctc tggtcaaccc caggacacac gcgggagcag
+     1921 cgccgggccg gggacgccct cccggccgcc cgtgccacac gcagggggcc ggcccgtgtc
+     1981 tccagagcgg gagccggaag cattttcggc cggcccctcc tacgaccggg acacacgagg
+     2041 gaccgaaggc cggccaggcg cgacctctcg ggccgcacgc gcgctcaggg agcgctctcc
+     2101 gactccgcac ggggactcgc cagaaaggat cgtgatctgc attaatgaat caggggataa
+     2161 cgcaggaaag aacatgtgag caaaaggcca gcaaaaggcc aggaaccgta aaaaggccgc
+     2221 gttgctggcg tttttccata ggctccgccc ccctgacgag catcacaaaa atcgacgctc
+     2281 aagtcagagg tggcgaaacc cgacaggact ataaagatac caggcgtttc cccctggaag
+     2341 ctccctcgtg cgctctcctg ttccgaccct gccgcttacc ggatacctgt ccgcctttct
+     2401 cccttcggga agcgtggcgc tttctcatag ctcacgctgt aggtatctca gttcggtgta
+     2461 ggtcgttcgc tccaagctgg gctgtgtgca cgaacccccc gttcagcccg accgctgcgc
+     2521 cttatccggt aactatcgtc ttgagtccaa cccggtaaga cacgacttat cgccactggc
+     2581 agcagccact ggtaacagga ttagcagagc gaggtatgta ggcggtgcta cagagttctt
+     2641 gaagtggtgg cctaactacg gctacactag aagaacagta tttggtatct gcgctctgct
+     2701 gaagccagtt accttcggaa aaagagttgg tagctcttga tccggcaaac aaaccaccgc
+     2761 tggtagcggt ggtttttttg tttgcaagca gcagattacg cgcagaaaaa aaggatctca
+     2821 agaagatcct ttgatctttt ctacggggtc tgacgctcag tggaacgaaa actcacgtta
+     2881 agggattttg gtcatgagat tatcaaaaag gatcttcacc tagatccttt taaattaaaa
+     2941 atgaagtttt aaatcaatct aaagtatata tgagtaaact tggtctgaca gttaccaatg
+     3001 cttaatcagt gaggcaccta tctcagcgat ctgtctattt cgttcatcca tagttgcctg
+     3061 actccccgtc gtgtagataa ctacgatacg ggagggctta ccatctggcc ccagtgctgc
+     3121 aatgataccg cgagacccac gctcaccggc tccagattta tcagcaataa accagccagc
+     3181 cggaagggcc gagcgcagaa gtggtcctgc aactttatcc gcctccatcc agtctattaa
+     3241 ttgttgccgg gaagctagag taagtagttc gccagttaat agtttgcgca acgttgttgc
+     3301 cattgctaca ggcatcgtgg tgtcacgctc gtcgtttggt atggcttcat tcagctccgg
+     3361 ttcccaacga tcaaggcgag ttacatgatc ccccatgttg tgcaaaaaag cggttagctc
+     3421 cttcggtcct ccgatcgttg tcagaagtaa gttggccgca gtgttatcac tcatggttat
+     3481 ggcagcactg cataattctc ttactgtcat gccatccgta agatgctttt ctgtgactgg
+     3541 tgagtactca accaagtcat tctgagaata gtgtatgcgg cgaccgagtt gctcttgccc
+     3601 ggcgtcaaca cgggataata ccgcgccaca tagcagaact ttaaaagtgc tcatcattgg
+     3661 aaaacgttct tcggggcgaa aactctcaag gatcttaccg ctgttgagat ccagttcgat
+     3721 gtaacccact cgtgcaccca actgatcttc agcatctttt actttcacca gcgtttctgg
+     3781 gtgagcaaaa acaggaaggc aaaatgccgc aaaaaaggga ataagggcga cacggaaatg
+     3841 ttgaatactc at
+//
