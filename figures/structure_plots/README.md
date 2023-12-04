@@ -1,0 +1,5 @@
+# H3 HA Structure Plots
+This directory contains code used to generate the H3 HA structures in figures 2, 4, and 5. This includes PyMol scripts (`.py` files) that should be run in this directory.
+* [antigenic_region_viz.py](antigenic_region_viz.py): PyMol script to color antigenic regions, as defined by Munoz and Deem (2005). This script also generates images of the RBD alone, which are used to manually outline the RBD in Illustrator. PNGs of the resulting re-colored structures are saved in [figure_2](figure_2) (full protein view) and [figure_4](figure_4) (focused on antigenic region B). 
+* [cohort_escape_b_factors.ipynb](cohort_escape_b_factors.ipynb): Notebook that reassigns B-factors in the 4O5N PDB file to correspond to escape scores from different cohorts. These reassigned PDBs are saved in [escape_score_pdbs](escape_score_pdbs).
+* [cohort_escape_viz.py](cohort_escape_viz.py): PyMol script to color H3 HA structures by max cohort escape, as defined by the PDBs in [escape_score_pdbs](escape_score_pdbs). PNGs of the resulting re-colored structures are saved in [figure_5](figure_5).
