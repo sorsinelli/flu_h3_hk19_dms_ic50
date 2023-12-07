@@ -17,7 +17,7 @@ A csv file containing the fully processed, filtered escape data is available at 
 * `serum`: numerical ID of the serum sample for the given escape scores.
 * `cohort`: age cohort for that serum sample - either `2-5_years` (8 sera), `15-20_years` (8 sera), or `40-45_years` (10 sera). 
 
-This repository also includes finalized analyses of serum escape from a non-barcoded library in the background of A/Perth/16/2009. Because of the difference in library design, the bulk of the data analysis can be found in the separate repository [map_flu_serum_Vietnam_H3_Perth2009](https://github.com/jbloomlab/map_flu_serum_Vietnam_H3_Perth2009/tree/master). However, the finalized, fully processed escape data is available here at [results/perth2009/merged_escape.csv]. Columns are as follows - 
+This repository also includes finalized analyses of serum escape from a non-barcoded library in the background of A/Perth/16/2009. Because of the difference in library design, the bulk of the data analysis can be found in the separate repository [map_flu_serum_Vietnam_H3_Perth2009](https://github.com/jbloomlab/map_flu_serum_Vietnam_H3_Perth2009/tree/master). However, the finalized, fully processed escape data is available here at [results/perth2009/merged_escape.csv](results/perth2009/merged_escape.csv). Columns are as follows - 
 * `name`: serum sample for the given escape scores, given as age and country where serum was collected. This file includes some miscellaneous adult sera collected in Seattle, but all downstream analysis only uses the Vietnam adult and child sera, plus the ferret sera.
 * `serum`: numeric ID for that serum.
 * `serum_group`: equivalent to `cohort` for HK/19 data - either `adult`, `child`, `VIDD sera` (for misc. Seattle adults), or `ferret`.
