@@ -59,12 +59,29 @@ rule process_perth2009_data:
         "results/logs/process_perth2009_data.txt",
     shell:
         "papermill {input.nb} {output.nb} &> {log}"
+        
+
+rule generate_filtered_escape_file:
+    """Generate a file of filtered avg escape scores for all HK/19 sera"""
+    input:
+        polyclonal_config=config["polyclonal_config"],
+        nb="notebooks/generate_filtered_escape_file.ipynb",
+    output:
+        csv="results/full_hk19_escape_scores.csv",
+        nb="results/notebooks/generate_filtered_escape_file.ipynb",
+    conda:
+        "environment.yml"
+    log:
+        "results/logs/generate_filtered_escape_file.txt",
+    shell:
+        "papermill {input.nb} {output.nb} &> {log}"
 
 
 # Add any extra data/results files for docs with name: file
 extra_data_files = {
     "sequential to reference site numbering": config["site_numbering_map"],
     "escape for Perth2009 DMS": "results/perth2009/merged_escape.csv",
+    "escape for HongKong/2019 DMS": "results/full_hk19_escape_scores.csv",
 }
 
 

@@ -14,6 +14,8 @@ docs/*.ipynb
 
 results/*
 
+!results/full_hk19_escape_scores.csv
+
 !results/gene_sequence
 results/gene_sequence/*
 !results/gene_sequence/*.fasta
