@@ -563,7 +563,7 @@ No spatial distances
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
 </pre></div></div>
 </div>
@@ -573,23 +573,23 @@ No spatial distances
 </div>
 <div class="output_area rendered_html docutils container">
 <style>
-  #altair-viz-0572a6a9fc664937bd3851e7b74f4c9b.vega-embed {
+  #altair-viz-5a005ff91cfa48c0b5550ef9fb0fe0ca.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-0572a6a9fc664937bd3851e7b74f4c9b.vega-embed details,
-  #altair-viz-0572a6a9fc664937bd3851e7b74f4c9b.vega-embed details summary {
+  #altair-viz-5a005ff91cfa48c0b5550ef9fb0fe0ca.vega-embed details,
+  #altair-viz-5a005ff91cfa48c0b5550ef9fb0fe0ca.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-0572a6a9fc664937bd3851e7b74f4c9b"></div>
+<div id="altair-viz-5a005ff91cfa48c0b5550ef9fb0fe0ca"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-0572a6a9fc664937bd3851e7b74f4c9b") {
-      outputDiv = document.getElementById("altair-viz-0572a6a9fc664937bd3851e7b74f4c9b");
+    if (outputDiv.id !== "altair-viz-5a005ff91cfa48c0b5550ef9fb0fe0ca") {
+      outputDiv = document.getElementById("altair-viz-5a005ff91cfa48c0b5550ef9fb0fe0ca");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -735,28 +735,28 @@ min_epitope_activity_to_include=0.2
 Fitting model with n_epitopes=1
 #
 # Fitting site-level fixed Hill coefficient and non-neutralized frac model.
-# Starting optimization of 508 parameters at Wed Oct  4 13:47:03 2023.
+# Starting optimization of 508 parameters at Mon Dec 11 20:55:38 2023.
         step    time_sec        loss    fit_loss  reg_escape  reg_spread reg_spatial reg_uniqueness reg_uniqueness2 reg_activity reg_hill_coefficient reg_non_neutralized_frac
-           0      0.0399       92268       92224           0           0           0              0               0       43.806                    0                        0
-         109      5.1875      3461.9      3431.5      7.0035           0           0              0               0       23.328                    0                        0
-# Successfully finished at Wed Oct  4 13:47:08 2023.
+           0    0.044594       92268       92224           0           0           0              0               0       43.806                    0                        0
+         109      5.3897      3461.9      3431.5      7.0035           0           0              0               0       23.328                    0                        0
+# Successfully finished at Mon Dec 11 20:55:43 2023.
 #
 # Fitting fixed Hill coefficient and non-neutralized frac model.
-# Starting optimization of 3266 parameters at Wed Oct  4 13:47:08 2023.
+# Starting optimization of 3266 parameters at Mon Dec 11 20:55:44 2023.
         step    time_sec        loss    fit_loss  reg_escape  reg_spread reg_spatial reg_uniqueness reg_uniqueness2 reg_activity reg_hill_coefficient reg_non_neutralized_frac
-           0    0.043266      3822.5      3759.7       39.48  3.5077e-32           0              0               0       23.328                    0                        0
-         158      7.5007      3606.1      3539.1      38.063      3.3192           0              0               0       25.575                    0                        0
-# Successfully finished at Wed Oct  4 13:47:16 2023.
+           0     0.04411      3822.5      3759.7       39.48  3.5077e-32           0              0               0       23.328                    0                        0
+         158       7.355      3606.1      3539.1      38.063      3.3192           0              0               0       25.575                    0                        0
+# Successfully finished at Mon Dec 11 20:55:51 2023.
 #
 # Fitting model.
-# Starting optimization of 3268 parameters at Wed Oct  4 13:47:16 2023.
+# Starting optimization of 3268 parameters at Mon Dec 11 20:55:51 2023.
         step    time_sec        loss    fit_loss  reg_escape  reg_spread reg_spatial reg_uniqueness reg_uniqueness2 reg_activity reg_hill_coefficient reg_non_neutralized_frac
-           0    0.048785      3583.1      3539.1      38.063      3.3192           0              0               0       2.5575                    0                        0
-         200       9.494      2150.3      1991.3      18.749      1.8564           0              0               0        1.214                137.2                        0
-         400      18.546      2143.4      1983.4      18.545       1.939           0              0               0       1.2134               138.32                        0
-         600      27.149      2142.6      1982.3      18.437      1.8825           0              0               0       1.2131               138.74                        0
-         606      27.391      2142.6      1982.2      18.438      1.8826           0              0               0        1.213               138.82                        0
-# Successfully finished at Wed Oct  4 13:47:43 2023.
+           0    0.043456      3583.1      3539.1      38.063      3.3192           0              0               0       2.5575                    0                        0
+         200      9.1464      2150.3      1991.3      18.749      1.8564           0              0               0        1.214                137.2                        0
+         400      18.008      2143.4      1983.4      18.545       1.939           0              0               0       1.2134               138.32                        0
+         600      27.002      2142.6      1982.3      18.437      1.8825           0              0               0       1.2131               138.74                        0
+         606      27.242      2142.6      1982.2      18.438      1.8826           0              0               0        1.213               138.82                        0
+# Successfully finished at Mon Dec 11 20:56:18 2023.
 Curve fits for epitopes:
 </pre></div></div>
 </div>
@@ -872,7 +872,7 @@ The selected model has 1 epitopes
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
 </pre></div></div>
 </div>
@@ -882,23 +882,23 @@ The selected model has 1 epitopes
 </div>
 <div class="output_area rendered_html docutils container">
 <style>
-  #altair-viz-5fc6971c6cc7448a92f5021b4b8848f0.vega-embed {
+  #altair-viz-1952ec28cca446ce8fe970f59d5c0db8.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-5fc6971c6cc7448a92f5021b4b8848f0.vega-embed details,
-  #altair-viz-5fc6971c6cc7448a92f5021b4b8848f0.vega-embed details summary {
+  #altair-viz-1952ec28cca446ce8fe970f59d5c0db8.vega-embed details,
+  #altair-viz-1952ec28cca446ce8fe970f59d5c0db8.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-5fc6971c6cc7448a92f5021b4b8848f0"></div>
+<div id="altair-viz-1952ec28cca446ce8fe970f59d5c0db8"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-5fc6971c6cc7448a92f5021b4b8848f0") {
-      outputDiv = document.getElementById("altair-viz-5fc6971c6cc7448a92f5021b4b8848f0");
+    if (outputDiv.id !== "altair-viz-1952ec28cca446ce8fe970f59d5c0db8") {
+      outputDiv = document.getElementById("altair-viz-1952ec28cca446ce8fe970f59d5c0db8");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -981,49 +981,49 @@ The selected model has 1 epitopes
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
 </pre></div></div>
 </div>
@@ -1033,23 +1033,23 @@ The selected model has 1 epitopes
 </div>
 <div class="output_area rendered_html docutils container">
 <style>
-  #altair-viz-184cdfd93b5d4f768912ae5656d25b68.vega-embed {
+  #altair-viz-f39e6b0d919c43bc8b7dc9878f7ec2e5.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-184cdfd93b5d4f768912ae5656d25b68.vega-embed details,
-  #altair-viz-184cdfd93b5d4f768912ae5656d25b68.vega-embed details summary {
+  #altair-viz-f39e6b0d919c43bc8b7dc9878f7ec2e5.vega-embed details,
+  #altair-viz-f39e6b0d919c43bc8b7dc9878f7ec2e5.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-184cdfd93b5d4f768912ae5656d25b68"></div>
+<div id="altair-viz-f39e6b0d919c43bc8b7dc9878f7ec2e5"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-184cdfd93b5d4f768912ae5656d25b68") {
-      outputDiv = document.getElementById("altair-viz-184cdfd93b5d4f768912ae5656d25b68");
+    if (outputDiv.id !== "altair-viz-f39e6b0d919c43bc8b7dc9878f7ec2e5") {
+      outputDiv = document.getElementById("altair-viz-f39e6b0d919c43bc8b7dc9878f7ec2e5");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -1132,49 +1132,49 @@ The selected model has 1 epitopes
 </div>
 <div class="output_area stderr docutils container">
 <div class="highlight"><pre>
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
-/fh/fast/bloom_j/computational_notebooks/fwelsh/2022/flu_h3_hk19_dms/.snakemake/conda/26972556fb4e62f8fee50d66e7b1cebc_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
+/fh/fast/bloom_j/computational_notebooks/fwelsh/flu_h3_hk19_dms/.snakemake/conda/4efb9d4ca7b5bb06c4658a842cc585ba_/lib/python3.11/site-packages/altair/utils/core.py:395: FutureWarning: the convert_dtype parameter is deprecated and will be removed in a future version.  Do ``ser.astype(object).apply()`` instead if you want ``convert_dtype=False``.
   col = df[col_name].apply(to_list_if_array, convert_dtype=False)
 </pre></div></div>
 </div>
@@ -1184,23 +1184,23 @@ The selected model has 1 epitopes
 </div>
 <div class="output_area rendered_html docutils container">
 <style>
-  #altair-viz-8d2b816d5e134a4ead86afec58718198.vega-embed {
+  #altair-viz-a395a309548f45118b073e14c2dab92f.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-8d2b816d5e134a4ead86afec58718198.vega-embed details,
-  #altair-viz-8d2b816d5e134a4ead86afec58718198.vega-embed details summary {
+  #altair-viz-a395a309548f45118b073e14c2dab92f.vega-embed details,
+  #altair-viz-a395a309548f45118b073e14c2dab92f.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-8d2b816d5e134a4ead86afec58718198"></div>
+<div id="altair-viz-a395a309548f45118b073e14c2dab92f"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-8d2b816d5e134a4ead86afec58718198") {
-      outputDiv = document.getElementById("altair-viz-8d2b816d5e134a4ead86afec58718198");
+    if (outputDiv.id !== "altair-viz-a395a309548f45118b073e14c2dab92f") {
+      outputDiv = document.getElementById("altair-viz-a395a309548f45118b073e14c2dab92f");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",

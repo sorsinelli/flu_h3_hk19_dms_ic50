@@ -57,10 +57,6 @@ Fit ``polyclonal`` models
 - :doc:`libB_230502_1_150C_2 <fit_polyclonal_libB_230502_1_150C_2>`
 - :doc:`libB_230502_1_18C_2 <fit_polyclonal_libB_230502_1_18C_2>`
 - :doc:`libB_230502_1_210C_2 <fit_polyclonal_libB_230502_1_210C_2>`
-- :doc:`libA_230517_1_ferret_2_1 <fit_polyclonal_libA_230517_1_ferret_2_1>`
-- :doc:`libA_230517_1_AUSAB-05_2 <fit_polyclonal_libA_230517_1_AUSAB-05_2>`
-- :doc:`libA_230517_1_AUSAB-08_2 <fit_polyclonal_libA_230517_1_AUSAB-08_2>`
-- :doc:`libA_230517_1_AUSAB-16_2 <fit_polyclonal_libA_230517_1_AUSAB-16_2>`
 - :doc:`libA_230620_1_2388_2 <fit_polyclonal_libA_230620_1_2388_2>`
 - :doc:`libA_230620_1_2462_1 <fit_polyclonal_libA_230620_1_2462_1>`
 - :doc:`libA_230620_1_2463_2 <fit_polyclonal_libA_230620_1_2463_2>`
@@ -68,6 +64,4 @@ Fit ``polyclonal`` models
 - :doc:`libA_230620_1_3944_1 <fit_polyclonal_libA_230620_1_3944_1>`
 - :doc:`libA_230620_1_4299_2 <fit_polyclonal_libA_230620_1_4299_2>`
 - :doc:`libA_230620_1_4584_2 <fit_polyclonal_libA_230620_1_4584_2>`
-- :doc:`libA_230620_1_ferret_1_1 <fit_polyclonal_libA_230620_1_ferret_1_1>`
-- :doc:`libA_230620_1_ferret_3_1 <fit_polyclonal_libA_230620_1_ferret_3_1>`
 

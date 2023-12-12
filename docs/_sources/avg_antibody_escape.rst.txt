@@ -33,10 +33,4 @@ Antibody-escape averaged across replicates
 - :doc:`68C <avg_antibody_escape_68C>`
 - :doc:`150C <avg_antibody_escape_150C>`
 - :doc:`18C <avg_antibody_escape_18C>`
-- :doc:`ferret_2 <avg_antibody_escape_ferret_2>`
-- :doc:`AUSAB-05 <avg_antibody_escape_AUSAB-05>`
-- :doc:`AUSAB-08 <avg_antibody_escape_AUSAB-08>`
-- :doc:`AUSAB-16 <avg_antibody_escape_AUSAB-16>`
-- :doc:`ferret_1 <avg_antibody_escape_ferret_1>`
-- :doc:`ferret_3 <avg_antibody_escape_ferret_3>`
 

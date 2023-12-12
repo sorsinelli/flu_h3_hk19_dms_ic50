@@ -25,6 +25,7 @@ details, using dropdowns, etc.
    fit_polyclonal
    avg_antibody_escape
    process_perth2009_data
+   generate_filtered_escape_file
 
 Data files
 ----------
@@ -42,6 +43,7 @@ Data files
 - `antibody escape values <https://github.com/dms-vep/flu_h3_hk19_dms/blob/main/./results/antibody_escape>`_
 - `sequential to reference site numbering <https://github.com/dms-vep/flu_h3_hk19_dms/blob/main/./data/site_map.csv>`_
 - `escape for Perth2009 DMS <https://github.com/dms-vep/flu_h3_hk19_dms/blob/main/./results/perth2009/merged_escape.csv>`_
+- `escape for HongKong/2019 DMS <https://github.com/dms-vep/flu_h3_hk19_dms/blob/main/./results/full_hk19_escape_scores.csv>`_
 
 Interactive plots of mutation functional effects
 ------------------------------------------------
@@ -80,11 +82,5 @@ Interactive plots of mutation antibody escape
 - `4584 escape plot <4584_escape_plot.html>`_
 - `68C escape plot <68C_escape_plot.html>`_
 - `74C escape plot <74C_escape_plot.html>`_
-- `AUSAB-05 escape plot <AUSAB-05_escape_plot.html>`_
-- `AUSAB-08 escape plot <AUSAB-08_escape_plot.html>`_
 - `AUSAB-13 escape plot <AUSAB-13_escape_plot.html>`_
-- `AUSAB-16 escape plot <AUSAB-16_escape_plot.html>`_
-- `ferret 1 escape plot <ferret_1_escape_plot.html>`_
-- `ferret 2 escape plot <ferret_2_escape_plot.html>`_
-- `ferret 3 escape plot <ferret_3_escape_plot.html>`_
 
