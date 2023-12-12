@@ -59,12 +59,15 @@ rule process_perth2009_data:
         "results/logs/process_perth2009_data.txt",
     shell:
         "papermill {input.nb} {output.nb} &> {log}"
-        
+
+   
 
 rule generate_filtered_escape_file:
     """Generate a file of filtered avg escape scores for all HK/19 sera"""
     input:
+        expand("results/antibody_escape/{serum}_avg.csv", serum=pd.read_csv(config["antibody_selections"])["antibody"].unique()),
         polyclonal_config=config["polyclonal_config"],
+        muteffects_csv="results/muteffects_functional/muteffects_observed.csv",
         nb="notebooks/generate_filtered_escape_file.ipynb",
     output:
         csv="results/full_hk19_escape_scores.csv",
