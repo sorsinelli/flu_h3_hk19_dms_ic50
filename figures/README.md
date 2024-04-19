@@ -5,6 +5,7 @@ This directory contains code used to generate all main figures in the final pape
     * Figure S5, S6
 * [heatmaps](heatmaps) - 
     * Figure 1B-C
+    * Figure S4
 * [sitewise_escape](sitewise_escape) -
     * Figure 2A, C-D
     * Figure 4A, C-D, F
