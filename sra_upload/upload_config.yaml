@@ -1,6 +1,0 @@
-# the BioSample accession
-biosample_accession: SAMN41851500
-
-# name of CSV file listing barcode runs to uploade
-barcode_runs: barcode_runs.csv
-sample_name: HK19_H3_HA_serum_barcodes

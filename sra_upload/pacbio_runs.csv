@@ -1,3 +1,0 @@
-date,virus_batch,library,sample_type,antibody,antibody_concentration,replicate,fastq_R1,exclude_after_counts,notes,neut_standard_name
-220303,1,libA,plasmid,,,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/220303_VH00319_162_AAATVT7M5/Unaligned/Project_fwelsh/libA_plasmid_S17_R1_001.fastq.gz,,,
-220303,1,libB,plasmid,,,1,/fh/fast/bloom_j/SR/ngs/illumina/fwelsh/220303_VH00319_162_AAATVT7M5/Unaligned/Project_fwelsh/libB_plasmid_S18_R1_001.fastq.gz,,,
