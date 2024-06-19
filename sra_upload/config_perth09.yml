@@ -16,11 +16,11 @@ sample_type: plasmid
 barcode_runs: 
   
   # Path to the barcoded runs csv file that will go into the BioSample
-  file_path: ../data/barcode_runs.csv
+  file_path: barcode_runs_perth09.csv
   
   # Edit this data that goes into the SRA metadata table for the BioSample
   accession: SAMN41851542
-  sample_id_columns: [date, virus_batch, sample_type, antibody, antibody_concentration, replicate]
+  sample_id_columns: [date, sample, serum_dilution, library]
   title_prefix: A/Perth/16/2009 HA Illumina sequencing for sample  
   description: Illumina sequencing of tiled HA sequence from A/Perth/16/2009 H3 HA
   strategy: AMPLICON
