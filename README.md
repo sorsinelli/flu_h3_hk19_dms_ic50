@@ -1,5 +1,7 @@
 # Deep mutational scanning of H3N2 flu strain A/HongKong/45/2019
 
+Study by [Frances Welsh, Jesse Bloom, et al., Cell Host & Microbe (2024)](https://www.cell.com/cell-host-microbe/fulltext/S1931-3128(24)00233-6)
+
 For detailed and easy-to-read documentation of the workflow and analysis, see [https://dms-vep.github.io/flu_h3_hk19_dms](https://dms-vep.github.io/flu_h3_hk19_dms/).
 
 ## Organization of this repo
