@@ -22,9 +22,9 @@ overall_default: &overall_default
                'W', 'F', 'A', 'I', 'L', 'M', 'V', 'G', 'P', 'C']
   icXX_plot_kwargs:
     <<: *plot_kwargs
-    x: 0.9   
-    icXX_col: IC90
-    log_fold_change_icXX_col: log2 fold change IC90
+    x: 0.5   
+    icXX_col: IC50
+    log_fold_change_icXX_col: log2 fold change IC50
     check_wt_icXX: [0.00001, 100000]
     
 # default configuration for monoclonal antibodies (mAbs)
